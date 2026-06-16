@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mental Health & Wellbeing Supports – JGHS</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --brand: #2E7D6B;
+    --brand-dark: #1F5C4F;
+    --crisis: #C0392B;
+    --crisis-light: #FDF0EF;
+    --bg: #F5F6FA;
+    --card: #FFFFFF;
+    --text: #1A1A2E;
+    --muted: #6B7280;
+    --border: #E5E7EB;
+    --pill-active-bg: #2E7D6B;
+    --pill-active-text: #FFFFFF;
+    --pill-bg: #FFFFFF;
+    --pill-text: #374151;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+    --shadow-hover: 0 4px 12px rgba(0,0,0,0.12);
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.5;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--brand);
+    color: #fff;
+    padding: 2rem 1.25rem 2.5rem;
+  }
+  .header-inner { max-width: 760px; margin: 0 auto; display: flex; align-items: center; gap: 1.75rem; }
+
+  .crest-wrap { flex-shrink: 0; animation: float 5s ease-in-out infinite; }
+  .header-crest {
+    height: 120px;
+    width: auto;
+    display: block;
+    filter: drop-shadow(0 4px 18px rgba(0,0,0,0.35)) drop-shadow(0 0 22px rgba(201,162,39,0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  .header-crest:hover {
+    transform: scale(1.07);
+    filter: drop-shadow(0 6px 22px rgba(0,0,0,0.45)) drop-shadow(0 0 32px rgba(201,162,39,0.6));
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-7px); }
+  }
+  @media (max-width: 500px) {
+    .header-inner { flex-direction: column; text-align: center; gap: 1rem; }
+    .header-crest { height: 85px; }
+  }
+
+  .school-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+  }
+  header h1 {
+    font-size: clamp(1.5rem, 5vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.75rem;
+  }
+  header p {
+    font-size: 1rem;
+    opacity: 0.9;
+    max-width: 520px;
+  }
+
+  /* ── SEARCH ── */
+  .search-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+    margin-top: -1.5rem;
+  }
+  .search-wrap input {
+    width: 100%;
+    padding: 0.9rem 1rem 0.9rem 3rem;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 1rem center;
+    box-shadow: var(--shadow);
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .search-wrap input:focus { border-color: var(--brand); }
+  .search-wrap input::placeholder { color: var(--muted); }
+
+  /* ── MAIN ── */
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 1.5rem 1.25rem 3rem;
+  }
+
+  /* ── CRISIS BANNER ── */
+  .crisis-banner {
+    background: var(--crisis-light);
+    border: 1.5px solid #F5C6C2;
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .crisis-banner h2 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--crisis);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .crisis-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .crisis-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: var(--crisis);
+    color: #fff;
+    text-decoration: none;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: opacity 0.15s;
+  }
+  .crisis-link:hover { opacity: 0.85; }
+
+  /* ── FILTERS ── */
+  .filters-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+  }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+  .pill {
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1.5px solid var(--border);
+    background: var(--pill-bg);
+    color: var(--pill-text);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .pill:hover { border-color: var(--brand); color: var(--brand); }
+  .pill.active {
+    background: var(--pill-active-bg);
+    border-color: var(--pill-active-bg);
+    color: var(--pill-active-text);
+  }
+
+  /* ── RESULTS COUNT ── */
+  .results-count {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+  }
+  .results-count strong { color: var(--text); }
+
+  /* ── CARDS ── */
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+  @media (min-width: 540px) {
+    .cards { grid-template-columns: 1fr 1fr; }
+  }
+
+  .card {
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1.5px solid var(--border);
+    padding: 1.1rem 1.25rem;
+    text-decoration: none;
+    color: var(--text);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    transition: box-shadow 0.15s, transform 0.15s;
+    cursor: pointer;
+  }
+  .card:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-1px);
+  }
+  .card-cat {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--brand);
+  }
+  .card-name {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+  .card-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  .card-link-hint {
+    margin-top: 0.25rem;
+    font-size: 0.78rem;
+    color: var(--brand);
+    font-weight: 500;
+  }
+
+  /* ── NO RESULTS ── */
+  .no-results {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--muted);
+    grid-column: 1 / -1;
+  }
+  .no-results p { margin-top: 0.5rem; font-size: 0.95rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="crest-wrap">
+      <img src="JGHS-Crest-Transparent-300.png" alt="James Gillespie's High School crest" class="header-crest" />
+    </div>
+    <div>
+      <p class="school-label">James Gillespie's High School</p>
+      <h1>Mental Health &amp; Wellbeing Supports</h1>
+      <p>Find help for yourself, a friend, or your family. Search by topic or scroll to browse.</p>
+    </div>
+  </div>
+</header>
+
+<div class="search-wrap">
+  <input type="search" id="search" placeholder="Search, e.g. anxiety, bereavement, eating…" autocomplete="off" />
+</div>
+
+<main>
+  <div class="crisis-banner">
+    <h2>⚠ Need help right now?</h2>
+    <div class="crisis-links">
+      <a class="crisis-link" href="https://www.samaritans.org/?nation=scotland" target="_blank" rel="noopener">Samaritans — call 116 123</a>
+      <a class="crisis-link" href="https://giveusashout.org/" target="_blank" rel="noopener">Shout — text 85258</a>
+      <a class="crisis-link" href="https://www.childline.org.uk/" target="_blank" rel="noopener">Childline — call 0800 1111</a>
+      <a class="crisis-link" href="https://breathingspace.scot/" target="_blank" rel="noopener">Breathing Space — call 0800 83 85 87</a>
+    </div>
+  </div>
+
+  <p class="filters-label">Filter by topic</p>
+  <div class="filters" id="filters"></div>
+
+  <p class="results-count" id="count"></p>
+  <div class="cards" id="cards"></div>
+</main>
+
+<footer>
+  <p>James Gillespie's High School · SNUG &amp; Wellbeing Hub · <a href="mailto:headteacher@jghs.edin.sch.uk" style="color:var(--brand)">Contact us</a></p>
+</footer>
+
+<script>
+const RESOURCES = [
+  // ── CRISIS
+  { name:"Samaritans", desc:"Free, confidential support any time of day or night.", cat:"Crisis & Immediate Help", url:"https://www.samaritans.org/?nation=scotland" },
+  { name:"Shout", desc:"Free text crisis support — text SHOUT to 85258.", cat:"Crisis & Immediate Help", url:"https://giveusashout.org/" },
+  { name:"Childline", desc:"Free, confidential helpline for children and young people.", cat:"Crisis & Immediate Help", url:"https://www.childline.org.uk/" },
+  { name:"Breathing Space", desc:"Scottish helpline for anyone feeling low, anxious or overwhelmed.", cat:"Crisis & Immediate Help", url:"https://breathingspace.scot/" },
+  { name:"PAPYRUS — HopelineUK", desc:"Suicide prevention support for young people.", cat:"Crisis & Immediate Help", url:"https://www.papyrus-uk.org/" },
+  { name:"Kooth", desc:"Free online mental wellbeing community for young people.", cat:"Crisis & Immediate Help", url:"https://www.kooth.com/" },
+  { name:"Self-harm support (14–19s)", desc:"Free online support for young people who self-harm.", cat:"Crisis & Immediate Help", url:"https://www.selfharm.co.uk/" },
+
+  // ── ANXIETY & SLEEP
+  { name:"stem4", desc:"Apps and resources for positive mental health in teenagers.", cat:"Anxiety & Sleep", url:"https://stem4.org.uk/" },
+  { name:"Clear Your Head", desc:"Scottish Government resource for managing worries and stress.", cat:"Anxiety & Sleep", url:"https://clearyourhead.scot/" },
+  { name:"Anxiety UK", desc:"Support, advice and therapies for people with anxiety.", cat:"Anxiety & Sleep", url:"https://www.anxietyuk.org.uk/" },
+  { name:"Teen Sleep Hub", desc:"Advice and tips to help teenagers sleep better.", cat:"Anxiety & Sleep", url:"https://teensleephub.org.uk/" },
+  { name:"Sleep Scotland", desc:"Help for children and young people with sleep problems.", cat:"Anxiety & Sleep", url:"https://sleepscotland.org/" },
+  { name:"BRAVE Online", desc:"Online self-help program for children with anxiety.", cat:"Anxiety & Sleep", url:"https://www.brave-online.com/" },
+  { name:"Wellspring Scotland", desc:"Counselling and psychotherapy charity based in Edinburgh.", cat:"Anxiety & Sleep", url:"https://www.wellspring-scotland.co.uk/" },
+
+  // ── BULLYING
+  { name:"Kidscape", desc:"Help and advice for children, young people and parents affected by bullying.", cat:"Bullying", url:"https://www.kidscape.org.uk/" },
+  { name:"Respect Me", desc:"Scotland's anti-bullying service — resources for young people, parents and schools.", cat:"Bullying", url:"https://respectme.org.uk/" },
+
+  // ── SELF-HARM & SUICIDAL IDEATION
+  { name:"Harmless", desc:"Support for people who self-harm or are at risk of self-harm.", cat:"Self-Harm & Suicidal Ideation", url:"https://harmless.org.uk/" },
+  { name:"National Self Harm Network", desc:"Support and information for people who self-harm.", cat:"Self-Harm & Suicidal Ideation", url:"https://www.nshn.co.uk/" },
+  { name:"Penumbra", desc:"Edinburgh self-harm service — support for 16+ and families.", cat:"Self-Harm & Suicidal Ideation", url:"https://www.penumbra.org.uk/" },
+  { name:"SAMH", desc:"Scottish Association for Mental Health — information and support.", cat:"Self-Harm & Suicidal Ideation", url:"https://www.samh.org.uk/" },
+  { name:"The Junction", desc:"Support for young people in Edinburgh aged 12–21.", cat:"Self-Harm & Suicidal Ideation", url:"https://the-junction.org/" },
+  { name:"Calm Harm", desc:"App to help manage the urge to self-harm.", cat:"Self-Harm & Suicidal Ideation", url:"https://calmharm.co.uk/" },
+  { name:"Joshua Nolan Foundation", desc:"Counselling and support around suicide for young people.", cat:"Self-Harm & Suicidal Ideation", url:"https://www.joshuanolanfoundation.org/" },
+  { name:"Self Injury Support", desc:"Support for women and girls affected by self-injury, trauma and abuse.", cat:"Self-Harm & Suicidal Ideation", url:"https://www.selfinjurysupport.org.uk/" },
+
+  // ── EATING DISORDERS & OCD
+  { name:"Beat Eating Disorders", desc:"UK's leading charity for people with eating disorders.", cat:"Eating Disorders & OCD", url:"https://www.beateatingdisorders.org.uk/" },
+  { name:"OCD UK", desc:"Helping you understand and manage Obsessive-Compulsive Disorder.", cat:"Eating Disorders & OCD", url:"https://www.ocduk.org/" },
+  { name:"HATW — Heads Above the Waves", desc:"Raising awareness of depression and self-harm in young people.", cat:"Eating Disorders & OCD", url:"https://hatw.co.uk/" },
+  { name:"iThrive Edinburgh — OCD resources", desc:"Self-help guides and resources for OCD.", cat:"Eating Disorders & OCD", url:"https://ithriveedinburgh.org.uk/self-help/self-help-guides-resources/obsessive-compulsions/" },
+
+  // ── ABUSE
+  { name:"Rape Crisis Scotland", desc:"Support for anyone affected by rape or sexual abuse.", cat:"Abuse", url:"https://www.rapecrisisscotland.org.uk/" },
+  { name:"Victim Support Scotland", desc:"Support for people affected by domestic abuse.", cat:"Abuse", url:"https://victimsupport.scot/" },
+  { name:"Scottish Women's Rights Centre", desc:"Legal rights and support for women experiencing violence.", cat:"Abuse", url:"https://www.scottishwomensrightscentre.org.uk/" },
+  { name:"Abused Men in Scotland", desc:"Support and information for men who have experienced abuse.", cat:"Abuse", url:"https://abusedmeninscotland.org/" },
+  { name:"Lucy Faithfull Foundation", desc:"Child sexual abuse prevention and support.", cat:"Abuse", url:"https://www.lucyfaithfull.org.uk/" },
+  { name:"Edinburgh Women's Aid", desc:"Support for women and children experiencing domestic abuse.", cat:"Abuse", url:"https://edinwomensaid.co.uk/" },
+
+  // ── BEREAVEMENT
+  { name:"Cruse Scotland", desc:"Bereavement support for people in Scotland.", cat:"Bereavement", url:"https://www.crusescotland.org.uk/" },
+  { name:"Wellbeing Lothian — Loss & Bereavement", desc:"Local support for people dealing with loss.", cat:"Bereavement", url:"https://www.wellbeinglothian.scot/area/loss-and-bereavement/support/" },
+  { name:"iThrive Edinburgh — Bereavement", desc:"Self-help guides for coping with bereavement and grief.", cat:"Bereavement", url:"https://ithriveedinburgh.org.uk/self-help/self-help-guides-resources/bereavement-and-grief/" },
+  { name:"Held in Our Hearts", desc:"Baby loss counselling and support.", cat:"Bereavement", url:"https://heldinourhearts.org.uk/" },
+  { name:"Mind — Bereavement by Suicide", desc:"Support for people bereaved by suicide.", cat:"Bereavement", url:"https://www.mind.org.uk/information-support/guides-to-support-and-services/bereavement/bereavement-by-suicide/" },
+  { name:"At a Loss", desc:"Directory of bereavement support services.", cat:"Bereavement", url:"https://www.ataloss.org/" },
+
+  // ── LGBT+
+  { name:"LGBT Youth Scotland", desc:"Scotland's national charity for LGBTQ+ young people.", cat:"LGBTQ+", url:"https://www.lgbtyouth.org.uk/" },
+  { name:"The Proud Trust", desc:"Helping LGBT+ young people to help themselves and others.", cat:"LGBTQ+", url:"https://www.theproudtrust.org/" },
+  { name:"Stonewall", desc:"Information, support and advice for LGBTQ+ people.", cat:"LGBTQ+", url:"https://www.stonewall.org.uk/" },
+
+  // ── YOUNG CARERS
+  { name:"Edinburgh Young Carers", desc:"Support for young people aged 5–25 who care for someone at home.", cat:"Young Carers", url:"https://www.youngcarers.org.uk/" },
+  { name:"NHS Lothian — Young Carers", desc:"Information and support for young carers from NHS Lothian.", cat:"Young Carers", url:"https://services.nhslothian.scot/supportingcarers/Pages/YoungCarers.aspx" },
+
+  // ── CULTURAL SUPPORT
+  { name:"Saheliya", desc:"Mental health support for Black and minority ethnic women and girls.", cat:"Cultural Support", url:"https://www.saheliya.co.uk/" },
+  { name:"Black Minds Matter UK", desc:"Connecting Black individuals and families with mental health support.", cat:"Cultural Support", url:"https://www.blackmindsmatteruk.com/" },
+  { name:"Muslim Women's Resource Centre", desc:"Support for Muslim and BME women in Scotland.", cat:"Cultural Support", url:"https://mwrc.org.uk/" },
+  { name:"ESA Scotland", desc:"Support for East and Southeast Asian people in Scotland.", cat:"Cultural Support", url:"https://www.esascotland.org/" },
+  { name:"Feniks", desc:"Supporting the Central Eastern European community in Edinburgh.", cat:"Cultural Support", url:"https://feniks.org.uk/" },
+  { name:"Shakti Edinburgh", desc:"Support for minority ethnic women experiencing domestic abuse.", cat:"Cultural Support", url:"https://shaktiedinburgh.co.uk/" },
+  { name:"Roshni", desc:"Health, safety and wellbeing of minority ethnic children and families.", cat:"Cultural Support", url:"https://sen.scot/network/members/roshni/" },
+  { name:"SHE Scotland", desc:"Supporting young women and girls.", cat:"Cultural Support", url:"https://www.shescotland.org.uk/" },
+
+  // ── SUBSTANCE MISUSE
+  { name:"Crew Scotland", desc:"Harm reduction information about drugs, alcohol and related issues.", cat:"Substance Misuse", url:"https://www.crew.scot/" },
+  { name:"Talk to Frank", desc:"Honest information about drugs — for young people.", cat:"Substance Misuse", url:"https://www.talktofrank.com/" },
+
+  // ── PARENTS & CARERS
+  { name:"MindEd", desc:"Free mental health education for adults working with or supporting young people.", cat:"Parents & Carers", url:"https://www.minded.org.uk/" },
+  { name:"Family Lives", desc:"Support and advice for parents on all aspects of family life.", cat:"Parents & Carers", url:"https://www.familylives.org.uk/" },
+  { name:"Care for the Family", desc:"Support for families going through difficulties.", cat:"Parents & Carers", url:"https://www.careforthefamily.org.uk/" },
+  { name:"Gingerbread", desc:"Support for single-parent families.", cat:"Parents & Carers", url:"https://www.gingerbread.org.uk/" },
+  { name:"Action for Children", desc:"Free advice and resources for parents and carers.", cat:"Parents & Carers", url:"https://parents.actionforchildren.org.uk/" },
+  { name:"Happy Maps", desc:"Mental health support for young people and their parents/carers.", cat:"Parents & Carers", url:"https://happymaps.co.uk/" },
+  { name:"iThrive Edinburgh", desc:"Local mental health and wellbeing support for children, young people and families.", cat:"Parents & Carers", url:"https://ithriveedinburgh.org.uk/" },
+  { name:"Edinburgh City Council — Family Support", desc:"Local support services for families in Edinburgh.", cat:"Parents & Carers", url:"https://www.edinburgh.gov.uk/supportforfamilies" },
+  { name:"HDS Scotland — Urgent Help", desc:"Useful links and contacts for urgent help.", cat:"Parents & Carers", url:"https://www.hds.scot/urgent-help" },
+
+  // ── APPS & WEBSITES
+  { name:"CAMHS Resources — Apps", desc:"Best mental health apps for teens, reviewed by CAMHS.", cat:"Apps & Websites", url:"https://www.camhs-resources.co.uk/apps-1" },
+  { name:"CAMHS Resources — Websites", desc:"Useful websites to support mental health and wellbeing.", cat:"Apps & Websites", url:"https://www.camhs-resources.co.uk/websites" },
+  { name:"Young Minds", desc:"UK's leading charity fighting for children and young people's mental health.", cat:"Apps & Websites", url:"https://www.youngminds.org.uk/" },
+  { name:"Therapist Aid — Grounding Techniques", desc:"Practical grounding exercises for trauma and anxiety.", cat:"Apps & Websites", url:"https://www.therapistaid.com/worksheets/grounding-techniques" },
+];
+
+const CATEGORIES = ["All", ...new Set(RESOURCES.map(r => r.cat))];
+
+let activeCategory = "All";
+let searchQuery = "";
+
+function render() {
+  const q = searchQuery.toLowerCase();
+  const filtered = RESOURCES.filter(r => {
+    const matchCat = activeCategory === "All" || r.cat === activeCategory;
+    const matchSearch = !q || r.name.toLowerCase().includes(q) || r.desc.toLowerCase().includes(q) || r.cat.toLowerCase().includes(q);
+    return matchCat && matchSearch;
+  });
+
+  const count = document.getElementById("count");
+  count.innerHTML = `<strong>${filtered.length}</strong> support${filtered.length !== 1 ? "s" : ""} found`;
+
+  const cards = document.getElementById("cards");
+  if (filtered.length === 0) {
+    cards.innerHTML = `<div class="no-results"><p>No results found.</p><p>Try a different search term or category.</p></div>`;
+    return;
+  }
+
+  cards.innerHTML = filtered.map(r => `
+    <a class="card" href="${r.url}" target="_blank" rel="noopener">
+      <span class="card-cat">${r.cat}</span>
+      <span class="card-name">${r.name}</span>
+      ${r.desc ? `<span class="card-desc">${r.desc}</span>` : ""}
+      <span class="card-link-hint">Visit website →</span>
+    </a>
+  `).join("");
+}
+
+function renderFilters() {
+  const wrap = document.getElementById("filters");
+  wrap.innerHTML = CATEGORIES.map(cat => `
+    <button class="pill${cat === activeCategory ? " active" : ""}" data-cat="${cat}">${cat}</button>
+  `).join("");
+}
+
+document.getElementById("filters").addEventListener("click", e => {
+  const btn = e.target.closest(".pill");
+  if (!btn) return;
+  activeCategory = btn.dataset.cat;
+  renderFilters();
+  render();
+});
+
+document.getElementById("search").addEventListener("input", e => {
+  searchQuery = e.target.value;
+  render();
+});
+
+renderFilters();
+render();
+</script>
+</body>
+</html>
