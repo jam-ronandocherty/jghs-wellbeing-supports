@@ -266,6 +266,28 @@
   }
   .no-results p { margin-top: 0.5rem; font-size: 0.95rem; }
 
+  /* ── RAINBOW (LGBTQ+) ── */
+  @keyframes rainbow-border {
+    0%   { border-left-color: hsl(0,   100%, 52%); }
+    20%  { border-left-color: hsl(39,  100%, 52%); }
+    40%  { border-left-color: hsl(120,  80%, 40%); }
+    60%  { border-left-color: hsl(210, 100%, 52%); }
+    80%  { border-left-color: hsl(270, 100%, 58%); }
+    100% { border-left-color: hsl(0,   100%, 52%); }
+  }
+  @keyframes rainbow-hue {
+    from { filter: hue-rotate(0deg);   }
+    to   { filter: hue-rotate(360deg); }
+  }
+  .card[data-rainbow] {
+    animation: rainbow-border 4s infinite linear;
+  }
+  .card[data-rainbow] .card-cat,
+  .card[data-rainbow] .card-icon {
+    color: hsl(0, 100%, 52%);
+    animation: rainbow-hue 4s infinite linear;
+  }
+
   /* ── FOOTER ── */
   footer {
     text-align: center;
@@ -455,7 +477,7 @@ function render() {
   cards.innerHTML = filtered.map(r => {
     const meta = CAT_META[r.cat] || { color: "var(--brand)", icon: "" };
     return `
-    <a class="card" href="${r.url}" target="_blank" rel="noopener" style="--cat-color:${meta.color}">
+    <a class="card" href="${r.url}" target="_blank" rel="noopener" style="--cat-color:${meta.color}"${r.cat === "LGBTQ+" ? ' data-rainbow="true"' : ''}>
       <div class="card-header">
         <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${meta.icon}</svg>
         <span class="card-cat">${r.cat}</span>
