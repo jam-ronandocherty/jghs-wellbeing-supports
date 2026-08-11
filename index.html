@@ -50,6 +50,7 @@
     --cat-physical: #F59E0B;
     --cat-depression: #4338CA;
     --cat-psychosis: #7C2D12;
+    --cat-general: #78716C;
   }
 
   body {
@@ -541,6 +542,7 @@ const CAT_META = {
   "Physical Health & Chronic Illness": { color: "var(--cat-physical)", icon: `<circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/>` },
   "Low Mood & Depression":        { color: "var(--cat-depression)", icon: `<path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/>` },
   "Psychosis":                    { color: "var(--cat-psychosis)", icon: `<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>` },
+  "General Mental Health":        { color: "var(--cat-general)", icon: `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>` },
 };
 
 const RESOURCES = [
@@ -569,6 +571,8 @@ const RESOURCES = [
   { name:"Centre for Psychological Therapies", desc:"Evidence-based psychological therapies for up to age 26 for low mood, anxiety, and trauma. Based at University of Edinburgh; donations welcomed.", cat:"Anxiety & Sleep", url:"https://www.health.ed.ac.uk/centre-for-psychological-therapies", cec: true },
   { name:"First Psychology Community Clinic", desc:"Low-cost counselling sessions (£5–£25) for adults 16+ with mild to moderate mental health difficulties.", cat:"Anxiety & Sleep", url:"https://www.firstpsychologytraining.co.uk/clinic", cec: true },
   { name:"NHS Lothian CAMHS — Computerised CBT", desc:"Free online CBT modules for children, teens and parents dealing with anxiety, worked through at your own pace. Access code: Lothian.", cat:"Anxiety & Sleep", url:"https://cyplothian.silvercloudhealth.com/signup/", cec: true },
+  { name:"Things to try", desc:"A collection of resources to help support children and young people's mental health and wellbeing, put together by Fife CAMHS.", cat:"Anxiety & Sleep", url:"https://www.nhsfife.org/camhs-thingstotry/" },
+  { name:"Managing School Anxiety", desc:"Advice for parents and carers on managing school-related anxiety.", cat:"Anxiety & Sleep", url:"https://www.edinburgh.gov.uk/downloads/file/33288/managing-school-anxiety-advice-for-parents", cec: true },
 
   // ── BULLYING
   { name:"Kidscape", desc:"Help and advice for children, young people and parents affected by bullying.", cat:"Bullying", url:"https://www.kidscape.org.uk/" },
@@ -599,6 +603,9 @@ const RESOURCES = [
   { name:"Edinburgh Women's Aid", desc:"Support for women and children experiencing domestic abuse.", cat:"Abuse", url:"https://edinwomensaid.co.uk/", cec: true },
   { name:"The STAR Project", desc:"Confidential support for young people aged 12–18 in Edinburgh experiencing sexual harm, plus support for their families.", cat:"Abuse", url:"https://www.ercc.scot/services/star-project/", cec: true },
   { name:"SARCS — Sexual Assault Response", desc:"NHS service providing healthcare and support in the days after rape or sexual assault. No obligation to report to police.", cat:"Abuse", url:"https://www.nhsinform.scot/turn-to-sarcs/", cec: true },
+  { name:"Abuse — Mind", desc:"Information and support for people affected by abuse, mainly listing national organisations.", cat:"Abuse", url:"https://www.mind.org.uk/information-support/guides-to-support-and-services/abuse/" },
+  { name:"Stop It Now!", desc:"Works to reduce child sexual abuse, with resources on online safety and for parents concerned about sexual behaviour.", cat:"Abuse", url:"https://www.stopitnow.org.uk/" },
+  { name:"Keeping Children Safe in Scotland", desc:"Scottish Government guides about child protection processes, written for children, young people and families.", cat:"Abuse", url:"https://www.childprotection-resource-scotland.co.uk/" },
 
   // ── BEREAVEMENT
   { name:"Cruse Scotland", desc:"Bereavement support for people in Scotland.", cat:"Bereavement", url:"https://www.crusescotland.org.uk/" },
@@ -608,6 +615,9 @@ const RESOURCES = [
   { name:"Mind — Bereavement by Suicide", desc:"Support for people bereaved by suicide.", cat:"Bereavement", url:"https://www.mind.org.uk/information-support/guides-to-support-and-services/bereavement/bereavement-by-suicide/" },
   { name:"At a Loss", desc:"Directory of bereavement support services.", cat:"Bereavement", url:"https://www.ataloss.org/" },
   { name:"Richmond's Hope", desc:"Support for children and young people aged 4–18 in Edinburgh and Midlothian who have been bereaved.", cat:"Bereavement", url:"https://www.richmondshope.org.uk/", cec: true },
+  { name:"Winston's Wish", desc:"Charity for bereaved children and their families after the death of a parent or sibling.", cat:"Bereavement", url:"https://winstonswish.org/" },
+  { name:"Child Bereavement UK", desc:"Supports families and educates professionals when a child is facing bereavement.", cat:"Bereavement", url:"https://www.childbereavementuk.org/" },
+  { name:"Hope Again", desc:"Cruse's website for children and young people experiencing bereavement.", cat:"Bereavement", url:"https://www.hopeagain.org.uk/" },
 
   // ── LGBT+
   { name:"LGBT Youth Scotland", desc:"Scotland's national charity for LGBTQ+ young people.", cat:"LGBTQ+", url:"https://www.lgbtyouth.org.uk/" },
@@ -666,6 +676,43 @@ const RESOURCES = [
   { name:"ND: Well", desc:"Support for the mental health and wellbeing of 5–24 year olds in Edinburgh with a neurodevelopmental condition such as autism, ADHD or intellectual disability.", cat:"ADHD & Autism", url:"https://tailoredfoundation.co.uk/ndwell-group-service/", cec: true },
   { name:"Tailor Ed Foundation", desc:"Early Years and Target Specific services plus social supports for the autism community in Edinburgh.", cat:"ADHD & Autism", url:"https://tailoredfoundation.co.uk/", cec: true },
   { name:"The Yard", desc:"Adventure play services for disabled children, young people and their families in the east of Scotland.", cat:"ADHD & Autism", url:"https://theyardscotland.org.uk/", cec: true },
+  { name:"Scottish ADHD Coalition", desc:"Support to adults and children with ADHD and their families.", cat:"ADHD & Autism", url:"https://www.scottishadhdcoalition.org/" },
+  { name:"EPIC — University of Edinburgh", desc:"Resources and guides on understanding the strengths and difficulties of neurodivergent children, developed by the University of Edinburgh.", cat:"ADHD & Autism", url:"https://clinical-brain-sciences.ed.ac.uk/research/epic-edinburgh-psychoeducation-intervention", cec: true },
+  { name:"Number 6", desc:"Free social opportunities, advice and support for autistic adults aged 16+ in the Lothians.", cat:"ADHD & Autism", url:"https://autisminitiatives.org/number-6/", cec: true },
+
+  // ── LEARNING DISABILITY
+  { name:"Mencap", desc:"Information and support about learning disability.", cat:"Learning Disability", url:"https://www.mencap.org.uk/" },
+  { name:"Kindred Scotland", desc:"Support for parents of children with complex needs.", cat:"Learning Disability", url:"https://kindred-scotland.org/" },
+  { name:"Contact", desc:"Support and advice for families with disabled children.", cat:"Learning Disability", url:"https://contact.org.uk/" },
+
+  // ── PHYSICAL HEALTH & CHRONIC ILLNESS
+  { name:"Centre for Effective Parenting", desc:"Guidance and leaflets to help your child cope with chronic illness.", cat:"Physical Health & Chronic Illness", url:"https://parenting-ed.org/" },
+  { name:"Children's Health Scotland", desc:"Promotes the healthcare rights and needs of children and young people in Scotland.", cat:"Physical Health & Chronic Illness", url:"https://www.childrenshealthscotland.org/" },
+  { name:"KidsHealth", desc:"Trusted information for parents, children and teens about illness and health.", cat:"Physical Health & Chronic Illness", url:"https://kidshealth.org/" },
+  { name:"Medicines for Children", desc:"Information about giving different types of medication to children.", cat:"Physical Health & Chronic Illness", url:"https://www.medicinesforchildren.org.uk/" },
+  { name:"NSPCC — Talking About Difficult Topics", desc:"Advice about how to talk to children about difficult topics.", cat:"Physical Health & Chronic Illness", url:"https://www.nspcc.org.uk/advice-for-families/talking-about-difficult-topics/" },
+  { name:"My Child is in Pain", desc:"Website developed by pain experts to help parents support a child in pain.", cat:"Physical Health & Chronic Illness", url:"https://mychildisinpain.org.uk/" },
+  { name:"Pain Toolkit", desc:"Information about pain, ideas for managing it, an app, videos and links.", cat:"Physical Health & Chronic Illness", url:"https://www.paintoolkit.org/" },
+  { name:"ALLIANCE Scotland", desc:"Strengthens the voice of people who access health and social care services in Scotland.", cat:"Physical Health & Chronic Illness", url:"https://www.alliance-scotland.org.uk/" },
+  { name:"Children in Hospital", desc:"Videos to help children and parents prepare for a stay in hospital.", cat:"Physical Health & Chronic Illness", url:"https://www.whatwhychildreninhospital.org.uk/" },
+  { name:"NeuroKid", desc:"Information for young people and families living with non-epileptic attack disorder.", cat:"Physical Health & Chronic Illness", url:"https://neurokid.co.uk/" },
+
+  // ── LOW MOOD & DEPRESSION
+  { name:"Living Life", desc:"Free NHS Scotland phone service offering Cognitive Behavioural Therapy (age 16+).", cat:"Low Mood & Depression", url:"https://www.nhs24.scot/how-we-can-help/living-life/" },
+
+  // ── PSYCHOSIS
+  { name:"What is psychosis?", desc:"Factsheet explaining psychosis for young people.", cat:"Psychosis", url:"https://www.rcpsych.ac.uk/mental-health/parents-and-young-people/psychosis-in-young-people" },
+  { name:"Epic Friends", desc:"Helps you support friends who might be struggling to cope emotionally.", cat:"Psychosis", url:"https://epicfriends.co.uk/" },
+  { name:"Rethink Mental Illness", desc:"Offers help to people with severe mental illness and their carers.", cat:"Psychosis", url:"https://www.rethink.org/" },
+
+  // ── GENERAL MENTAL HEALTH
+  { name:"RCPsych", desc:"Mental health information for parents and young people from the Royal College of Psychiatrists.", cat:"General Mental Health", url:"https://www.rcpsych.ac.uk/mental-health/parents-and-young-people" },
+  { name:"Mental Health Foundation", desc:"Raising awareness for mental health across Scotland.", cat:"General Mental Health", url:"https://www.mentalhealth.org.uk/scotland" },
+  { name:"Taking CARE to Promote Mental Health in Schools and Colleges", desc:"A short animation from the Anna Freud Centre on supporting mental health in schools and colleges.", cat:"General Mental Health", url:"https://www.annafreud.org/resources/schools-and-colleges/taking-care-to-promote-mental-health-in-schools-and-colleges/" },
+  { name:"Mind Yer Time", desc:"Guidance on digital technology and social media use, created by children and young people for children and young people.", cat:"General Mental Health", url:"https://mindyertime.scot/" },
+  { name:"Anna Freud Centre", desc:"Tips and advice for what to do when someone you care about is going through a rough patch.", cat:"General Mental Health", url:"https://www.annafreud.org/" },
+  { name:"Anger — Moodjuice", desc:"NHS Scotland self-help guide to understanding and managing anger.", cat:"General Mental Health", url:"https://www.moodjuice.scot.nhs.uk/anger.asp" },
+  { name:"Get self-help", desc:"Self-help and therapy resources, including worksheets and information.", cat:"General Mental Health", url:"https://www.getselfhelp.co.uk/" },
 
   // ── APPS & WEBSITES
   { name:"CAMHS Resources — Apps", desc:"Best mental health apps for teens, reviewed by CAMHS.", cat:"Apps & Websites", url:"https://www.camhs-resources.co.uk/apps-1" },
@@ -676,6 +723,9 @@ const RESOURCES = [
   { name:"Insight Timer", desc:"Free app with thousands of meditation tracks, relaxing music, body scans and emotion management activities.", cat:"Apps & Websites", url:"https://insighttimer.com/" },
   { name:"Calm", desc:"A mindfulness app for beginners, with a section specifically suited for children and young people.", cat:"Apps & Websites", url:"https://www.calm.com/" },
   { name:"Happify", desc:"Science-based activities and games to help overcome negative thoughts, stress and life's challenges.", cat:"Apps & Websites", url:"https://www.happify.com/" },
+  { name:"Daylight", desc:"Confidential app for young people aged 16+ to help take control of anxiety.", cat:"Apps & Websites", url:"https://www.bighealth.co.uk/daylight" },
+  { name:"MindShift CBT", desc:"Free app to help teens and young adults learn CBT skills to cope with anxiety.", cat:"Apps & Websites", url:"https://www.anxietycanada.com/resources/mindshift-cbt/" },
+  { name:"What's Up", desc:"Free app providing daily tools and techniques, based on CBT and ACT, to support positive mental health.", cat:"Apps & Websites", url:"https://apps.apple.com/us/app/whats-up-a-mental-health-app/id968251160" },
 ];
 
 const CATEGORIES = ["All", ...new Set(RESOURCES.map(r => r.cat))];
