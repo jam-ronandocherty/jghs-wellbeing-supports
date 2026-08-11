@@ -64,6 +64,11 @@
   .header-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 1.75rem; }
 
   .crest-wrap { flex-shrink: 0; animation: float 5s ease-in-out infinite; }
+  .crest-link { display: block; border-radius: 8px; }
+  .crest-link:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 4px;
+  }
   .header-crest {
     height: 120px;
     width: auto;
@@ -85,12 +90,21 @@
   }
 
   .school-label {
+    display: inline-block;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     opacity: 0.96;
     margin-bottom: 0.5rem;
+    color: inherit;
+    text-decoration: none;
+  }
+  .school-label:hover { text-decoration: underline; text-underline-offset: 3px; }
+  .school-label:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+    border-radius: 2px;
   }
   header h1 {
     font-size: clamp(1.5rem, 5vw, 2.25rem);
@@ -458,10 +472,12 @@
 <header>
   <div class="header-inner">
     <div class="crest-wrap">
-      <img src="JGHS-Crest-Transparent-300.png" alt="James Gillespie's High School crest" class="header-crest" />
+      <a class="crest-link" href="https://www.jamesgillespies.co.uk" target="_blank" rel="noopener" aria-label="James Gillespie's High School website (opens in a new tab)">
+        <img src="JGHS-Crest-Transparent-300.png" alt="" class="header-crest" />
+      </a>
     </div>
     <div>
-      <p class="school-label">James Gillespie's High School</p>
+      <a class="school-label" href="https://www.jamesgillespies.co.uk" target="_blank" rel="noopener">James Gillespie's High School</a>
       <h1>Mental Health &amp; Wellbeing Supports</h1>
       <p>Find help for yourself, a friend, or your family. Search by topic or scroll to browse.</p>
     </div>
