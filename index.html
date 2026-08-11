@@ -7,6 +7,10 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+  @media (prefers-reduced-motion: no-preference) {
+    html { scroll-behavior: smooth; }
+  }
+
   :root {
     --brand: #2E7D6B;
     --brand-dark: #1F5C4F;
@@ -15,7 +19,7 @@
     --bg: #F5F6FA;
     --card: #FFFFFF;
     --text: #1A1A2E;
-    --muted: #6B7280;
+    --muted: #666F7C;
     --border: #E5E7EB;
     --pill-active-bg: #2E7D6B;
     --pill-active-text: #FFFFFF;
@@ -85,7 +89,7 @@
     font-weight: 600;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    opacity: 0.8;
+    opacity: 0.96;
     margin-bottom: 0.5rem;
   }
   header h1 {
@@ -96,7 +100,7 @@
   }
   header p {
     font-size: 1rem;
-    opacity: 0.9;
+    opacity: 0.96;
     max-width: 520px;
   }
 
@@ -106,10 +110,11 @@
     margin: 0 auto;
     padding: 0 2rem;
     margin-top: -1.5rem;
+    position: relative;
   }
   .search-wrap input {
     width: 100%;
-    padding: 0.9rem 1rem 0.9rem 3rem;
+    padding: 0.9rem 2.75rem 0.9rem 3rem;
     border: 2px solid var(--border);
     border-radius: var(--radius);
     font-size: 1rem;
@@ -123,6 +128,32 @@
     outline-offset: 2px;
   }
   .search-wrap input::placeholder { color: var(--muted); }
+
+  .search-kbd-hint {
+    position: absolute;
+    right: calc(2rem + 14px);
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    padding: 0 6px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.15s;
+  }
+  .search-kbd-hint.is-hidden { opacity: 0; }
+  @media (max-width: 640px), (pointer: coarse) {
+    .search-kbd-hint { display: none; }
+  }
 
   /* ── MAIN ── */
   main {
@@ -149,6 +180,11 @@
     display: flex;
     align-items: center;
     gap: 0.4rem;
+  }
+  .crisis-sub {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: -0.25rem;
   }
   .crisis-links {
     display: flex;
@@ -308,10 +344,51 @@
   .no-results {
     text-align: center;
     padding: 3rem 1rem;
-    color: var(--muted);
     grid-column: 1 / -1;
   }
-  .no-results p { margin-top: 0.5rem; font-size: 0.95rem; }
+  .no-results-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .no-results-sub {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--muted);
+  }
+  .no-results-clear {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: var(--brand);
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .no-results-clear:hover { color: var(--brand-dark); }
+  .no-results-clear:focus-visible {
+    outline: 3px solid var(--brand);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+  .no-results-crisis {
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .no-results-crisis a {
+    color: var(--crisis);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .no-results-crisis a:focus-visible {
+    outline: 3px solid var(--crisis);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
 
   /* ── RAINBOW (LGBTQ+) ── */
   @keyframes rainbow-border {
@@ -393,11 +470,13 @@
 
 <div class="search-wrap">
   <input type="search" id="search" placeholder="Search, e.g. anxiety, bereavement, eating…" autocomplete="off" aria-label="Search support resources" />
+  <span class="search-kbd-hint" id="searchKbdHint" aria-hidden="true">/</span>
 </div>
 
 <main>
-  <div class="crisis-banner">
+  <div class="crisis-banner" id="crisis-banner" tabindex="-1">
     <h2>⚠ Need help right now?</h2>
+    <p class="crisis-sub">These are free, confidential, and here right now — for you, or anyone you're worried about.</p>
     <div class="crisis-links">
       <a class="crisis-link" href="tel:999">Emergency — call 999</a>
       <a class="crisis-link" href="tel:111">NHS 24 — call 111</a>
@@ -566,7 +645,12 @@ function render() {
 
   const cards = document.getElementById("cards");
   if (filtered.length === 0) {
-    cards.innerHTML = `<div class="no-results"><p>No results found.</p><p>Try a different search term or category.</p></div>`;
+    cards.innerHTML = `
+    <div class="no-results">
+      <p class="no-results-title">No matches found</p>
+      <p class="no-results-sub">Try a different word, or <button type="button" class="no-results-clear" id="clearSearchBtn">clear your search</button> to browse everything.</p>
+      <p class="no-results-crisis">Need to talk to someone right now? <a href="#crisis-banner">The numbers above are free and confidential.</a></p>
+    </div>`;
     return;
   }
 
@@ -603,14 +687,42 @@ document.getElementById("filters").addEventListener("click", e => {
   render();
 });
 
+const searchInput = document.getElementById("search");
+const searchKbdHint = document.getElementById("searchKbdHint");
+
+function updateKbdHint() {
+  searchKbdHint.classList.toggle("is-hidden", document.activeElement === searchInput || searchInput.value.length > 0);
+}
+
 let searchDebounce;
-document.getElementById("search").addEventListener("input", e => {
+searchInput.addEventListener("input", e => {
   const value = e.target.value;
+  updateKbdHint();
   clearTimeout(searchDebounce);
   searchDebounce = setTimeout(() => {
     searchQuery = value;
     render();
   }, 120);
+});
+searchInput.addEventListener("focus", updateKbdHint);
+searchInput.addEventListener("blur", updateKbdHint);
+
+document.addEventListener("keydown", e => {
+  if (e.key !== "/" || e.metaKey || e.ctrlKey || e.altKey) return;
+  const tag = document.activeElement.tagName;
+  if (tag === "INPUT" || tag === "TEXTAREA") return;
+  e.preventDefault();
+  searchInput.focus();
+});
+
+document.getElementById("cards").addEventListener("click", e => {
+  const btn = e.target.closest("#clearSearchBtn");
+  if (!btn) return;
+  searchQuery = "";
+  searchInput.value = "";
+  updateKbdHint();
+  render();
+  searchInput.focus();
 });
 
 renderFilters();
