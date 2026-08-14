@@ -8,7 +8,7 @@ web
 
 ## Stack
 
-static HTML/CSS/vanilla JS (single `index.html`, no build step)
+static HTML/CSS/vanilla JS (`index.html`, no build step). Resource data lives in `resources.json`, loaded via `fetch()` at runtime — this means local preview requires a local HTTP server (e.g. `npx serve .`, already configured in `.claude/launch.json`); opening `index.html` directly via `file://` will not load the resource list due to browser CORS restrictions on `fetch()` of local files.
 
 ## Users
 
@@ -29,7 +29,7 @@ Not a general information page — a curated, categorized directory combining na
 
 - Distributed as a link from the school website and potentially via posters/QR codes, so the page must work well as a cold, unauthenticated first load with no dependency on prior navigation.
 - No login or account system — must remain a simple static page anyone can open directly.
-- Resource list (`RESOURCES` array in `index.html`) is maintained directly in code; no CMS.
+- Resource list is maintained directly in `resources.json` (a flat array of `{ name, desc, cat, url, cec? }` objects); no CMS. A weekly GitHub Actions workflow (`.github/workflows/link-check.yml`) checks all URLs and reports dead links (advisory only, does not block merges).
 
 ## Capabilities and Constraints
 

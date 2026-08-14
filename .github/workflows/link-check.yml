@@ -1,0 +1,27 @@
+name: Link Check
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"
+  pull_request:
+    paths:
+      - "resources.json"
+  workflow_dispatch: {}
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link Checker
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --no-progress
+            --max-concurrency 8
+            --timeout 20
+            --retry-wait-time 5
+            --user-agent "JGHS-Wellbeing-LinkCheck/1.0 (+https://www.jamesgillespies.co.uk)"
+            resources.json
+          fail: false
+          format: markdown
