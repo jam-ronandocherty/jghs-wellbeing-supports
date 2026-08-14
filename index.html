@@ -4,8 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mental Health & Wellbeing Supports – JGHS</title>
+<meta name="description" content="A searchable directory of mental health and wellbeing support services for James Gillespie's High School students, parents and staff — covering crisis help, anxiety, bullying, bereavement and more, with both national and local Edinburgh services.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232E7D6B'/%3E%3Ctext x='50' y='70' font-size='58' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3EJ%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Mental Health & Wellbeing Supports – JGHS">
+<meta property="og:description" content="Find help for yourself, a friend, or your family — a searchable directory of national and Edinburgh-local wellbeing services.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mental Health & Wellbeing Supports – JGHS">
+<meta name="twitter:description" content="Find help for yourself, a friend, or your family — search by topic or scroll to browse.">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
 
   @media (prefers-reduced-motion: no-preference) {
     html { scroll-behavior: smooth; }
@@ -514,7 +528,7 @@
   <p class="filters-label">Filter by topic</p>
   <div class="filters" id="filters"></div>
 
-  <p class="results-count" id="count"></p>
+  <p class="results-count" id="count" aria-live="polite" aria-atomic="true"></p>
   <div class="cards" id="cards"></div>
 </main>
 
@@ -554,7 +568,7 @@ const RESOURCES = [
   { name:"PAPYRUS — HopelineUK", desc:"Confidential support for young people struggling with thoughts of suicide, available 24/7. Call 0800 068 4141, text 07860 039967, or email pat@papyrus-uk.org.", cat:"Crisis & Immediate Help", url:"https://www.papyrus-uk.org/" },
   { name:"The Mix", desc:"Free support for under 25s on any challenge — mental health, money, relationships, drugs and more. Call 0808 808 4994 (Mon–Sat 4–11pm) or text THEMIX to 85258 (24/7).", cat:"Crisis & Immediate Help", url:"https://www.themix.org.uk/" },
   { name:"The Spark Counselling Helpline", desc:"Free, confidential counselling helpline for mental health, emotions and relationship problems. Call 0808 802 2088. Mon–Thu 9am–9pm, Fri 9am–4pm.", cat:"Crisis & Immediate Help", url:"https://www.thespark.org.uk/" },
-  { name:"Edinburgh Crisis Centre", desc:"24/7 crisis support for people in Edinburgh. Call 0808 801 0414 or text 07974 429075.", cat:"Crisis & Immediate Help", url:"https://www.penumbra.org.uk/" },
+  { name:"Edinburgh Crisis Centre", desc:"24/7 crisis support for people in Edinburgh, run by Penumbra. Call 0808 801 0414 or text 07974 429075.", cat:"Crisis & Immediate Help", url:"https://www.penumbra.org.uk/" },
   { name:"NHS Lothian — Mental Health Assessment Service", desc:"Urgent mental health assessment for people in Edinburgh. Call 0131 537 6000 or 0131 286 8137.", cat:"Crisis & Immediate Help", url:"https://www.nhslothian.scot/YourHealth/MentalHealth/" },
   { name:"Kooth", desc:"Free online mental wellbeing community for young people.", cat:"Crisis & Immediate Help", url:"https://www.kooth.com/" },
   { name:"Self-harm support (14–19s)", desc:"Free online support for young people who self-harm.", cat:"Crisis & Immediate Help", url:"https://www.selfharm.co.uk/" },
@@ -768,7 +782,7 @@ function render() {
       </div>
       <span class="card-name">${r.name}</span>
       ${r.desc ? `<span class="card-desc">${r.desc}</span>` : ""}
-      <span class="card-link-hint">Visit website →</span>
+      <span class="card-link-hint">Visit website<span class="sr-only"> (opens in a new tab)</span> →</span>
     </a>`;
   }).join("");
 }
