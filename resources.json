@@ -300,6 +300,12 @@
     "url": "https://www.childprotection-resource-scotland.co.uk/"
   },
   {
+    "name": "Scotland's Domestic Abuse and Forced Marriage Helpline",
+    "desc": "24-hour helpline if you feel scared of your partner or are worried about someone you know. Call 0800 027 1234.",
+    "cat": "Abuse",
+    "url": "https://sdafmh.org.uk/"
+  },
+  {
     "name": "Cruse Scotland",
     "desc": "Bereavement support for people in Scotland.",
     "cat": "Bereavement",
@@ -955,6 +961,153 @@
     "desc": "Tools to help structure a wellbeing conversation with your manager or colleagues.",
     "cat": "Staff Wellbeing",
     "url": "https://orb.edinburgh.gov.uk/downloads/download/11866/wellbeing-tools",
+    "staff": true
+  },
+  {
+    "name": "Orb — Mental Health",
+    "desc": "Council staff intranet hub page for mental health: mindfulness apps, helplines, national strategy and practice resources.",
+    "cat": "Staff Wellbeing",
+    "url": "https://orb.edinburgh.gov.uk/mental-health-4",
+    "staff": true
+  },
+  {
+    "name": "Orb — Physical Health",
+    "desc": "Council staff intranet hub page for physical health guidance and resources.",
+    "cat": "Staff Wellbeing",
+    "url": "https://orb.edinburgh.gov.uk/physical-health-1",
+    "staff": true
+  },
+  {
+    "name": "Orb — Financial Health",
+    "desc": "Council staff intranet hub page for financial wellbeing guidance and resources.",
+    "cat": "Staff Wellbeing",
+    "url": "https://orb.edinburgh.gov.uk/financial-health-1",
+    "staff": true
+  },
+  {
+    "name": "NHS Choices — Mindfulness",
+    "desc": "NHS information and tips on practising mindfulness.",
+    "cat": "Staff Wellbeing",
+    "url": "https://www.nhs.uk/mental-health/self-help/tips-and-support/mindfulness/",
+    "staff": true
+  },
+  {
+    "name": "Action for Happiness",
+    "desc": "Includes a link to their app, which acts as a personal action coach to give you a boost.",
+    "cat": "Staff Wellbeing",
+    "url": "https://www.actionforhappiness.org/",
+    "staff": true
+  },
+  {
+    "name": "ACAS — Mental Health at Work",
+    "desc": "Advice on promoting positive mental health in the workplace.",
+    "cat": "Staff Wellbeing",
+    "url": "http://www.acas.org.uk/index.aspx?articleid=6064",
+    "staff": true
+  },
+  {
+    "name": "NHS Lothian Stress Control",
+    "desc": "Free NHS Lothian course to help you understand and manage stress.",
+    "cat": "Staff Wellbeing",
+    "url": "https://services.nhslothian.scot/stresscontrol/",
+    "staff": true
+  },
+  {
+    "name": "GTCS — Health and Wellbeing as a Teacher",
+    "desc": "Guidance and resources from the General Teaching Council for Scotland on looking after your health and wellbeing as a teacher.",
+    "cat": "Staff Wellbeing",
+    "url": "https://www.gtcs.org.uk/registrant-resources/health-and-wellbeing-as-a-teacher",
+    "staff": true
+  },
+  {
+    "name": "Wellbeing Planning Tool",
+    "desc": "NHS Education for Scotland (NES) tool with a traffic-light warning system to help you recognise if your wellbeing may be at risk and suggest ways to manage stress.",
+    "cat": "Staff Wellbeing",
+    "url": "https://learn.nes.nhs.scot/30741/psychosocial-mental-health-and-wellbeing-support/taking-care-of-myself/wellbeing-planning-tool",
+    "staff": true
+  },
+  {
+    "name": "Education Support",
+    "desc": "Free, confidential helpline for anyone in education. Call 08000 562561.",
+    "cat": "Staff Wellbeing",
+    "url": "http://www.educationsupport.org.uk/",
+    "staff": true
+  },
+  {
+    "name": "Mental Health and Wellbeing Strategy",
+    "desc": "Scottish Government's long-term vision and approach to improving mental health and wellbeing for everyone in Scotland, published June 2023.",
+    "cat": "Staff Wellbeing",
+    "url": "https://www.gov.scot/publications/mental-health-wellbeing-strategy/",
+    "staff": true
+  },
+  {
+    "name": "Whole School Approach to Mental Health and Wellbeing",
+    "desc": "Scottish Government framework placing the rights of the child at the heart of the whole school community, with an opportunity to reflect on learning needs.",
+    "cat": "Staff Wellbeing",
+    "url": "https://www.gov.scot/publications/whole-school-approach-mental-health-wellbeing/",
+    "staff": true
+  },
+  {
+    "name": "SAMH — Supporting the Mental Health and Wellbeing of School Staff",
+    "desc": "SAMH leaflet on supporting the mental health and wellbeing of school staff.",
+    "cat": "Staff Wellbeing",
+    "url": "https://www.samh.org.uk/documents/School_staff_wellbeing_leaflet_online.pdf",
+    "staff": true
+  },
+  {
+    "name": "HSE Talking Toolkit",
+    "desc": "Health and Safety Executive toolkit with conversation guides for talking about stress at work.",
+    "cat": "Staff Wellbeing",
+    "url": "https://www.hse.gov.uk/stress/assets/docs/stress-talking-toolkit.pdf",
+    "staff": true
+  },
+  {
+    "name": "Children and Young People's Mental Health and Wellbeing: A Knowledge and Skills Framework",
+    "desc": "NHS Education for Scotland (NES) framework for everyone working with children and young people, providing a shared understanding of mental health and wellbeing needs.",
+    "cat": "Staff Wellbeing",
+    "url": "https://learn.nes.nhs.scot/49341/children-and-young-people-s-mental-health-and-wellbeing/children-and-young-people-s-mental-health-and-wellbeing-a-knowledge-and-skills-framework-for-the-scottish-workforce",
+    "staff": true
+  },
+  {
+    "name": "Inclusion, Wellbeing and Equalities Professional Learning Framework",
+    "desc": "Education Scotland framework to support those working in educational contexts.",
+    "cat": "Staff Wellbeing",
+    "url": "https://education.gov.scot/professional-learning/leading-professional-learning/inclusion-wellbeing-equalities-professional-learning-framework/",
+    "staff": true
+  },
+  {
+    "name": "Positive Mental Wellbeing: Resources to Support Children and Young People",
+    "desc": "Education Scotland resources to support the mental wellbeing of children and young people.",
+    "cat": "Staff Wellbeing",
+    "url": "https://education.gov.scot/resources/positive-mental-wellbeing-resources-to-support-children-and-young-people/",
+    "staff": true
+  },
+  {
+    "name": "Nurture and Trauma-Informed Approaches",
+    "desc": "Education Scotland summary of supports and resources for nurture and trauma-informed approaches.",
+    "cat": "Staff Wellbeing",
+    "url": "https://education.gov.scot/resources/nurture-and-trauma-informed-approaches-a-summary-of-supports-and-resources/",
+    "staff": true
+  },
+  {
+    "name": "SAMH — Mental Health eLearning for Teachers",
+    "desc": "Free eLearning modules from SAMH to help teachers understand and support mental health.",
+    "cat": "Staff Wellbeing",
+    "url": "https://www.samh.org.uk/about-mental-health/elearning-for-teachers",
+    "staff": true
+  },
+  {
+    "name": "EIS — Looking After Your Health and Wellbeing",
+    "desc": "Educational Institute of Scotland guidance and support for members' health and wellbeing.",
+    "cat": "Staff Wellbeing",
+    "url": "https://www.eis.org.uk/student-support/handwb",
+    "staff": true
+  },
+  {
+    "name": "SSTA — Stress",
+    "desc": "Scottish Secondary Teachers' Association guidance on managing stress.",
+    "cat": "Staff Wellbeing",
+    "url": "https://ssta.org.uk/docs/stress/",
     "staff": true
   }
 ]

@@ -65,9 +65,7 @@
     --cat-depression: #4338CA;
     --cat-psychosis: #7C2D12;
     --cat-general: #78716C;
-    --cat-staff: #1E293B;
-
-    --staff-badge-bg: #92400E;
+    --cat-staff: #CA8A04;
   }
 
   body {
@@ -279,14 +277,14 @@
     transition: all 0.15s;
     white-space: nowrap;
   }
-  .pill:hover { border-color: var(--brand); color: var(--brand); }
+  .pill:hover { border-color: var(--cat-color, var(--brand)); color: var(--cat-color, var(--brand)); }
   .pill:focus-visible {
-    outline: 3px solid var(--brand);
+    outline: 3px solid var(--cat-color, var(--brand));
     outline-offset: 2px;
   }
   .pill.active {
-    background: var(--pill-active-bg);
-    border-color: var(--pill-active-bg);
+    background: var(--cat-color, var(--pill-active-bg));
+    border-color: var(--cat-color, var(--pill-active-bg));
     color: var(--pill-active-text);
   }
 
@@ -484,7 +482,7 @@
   .staff-badge {
     display: inline-flex;
     align-items: center;
-    background: var(--staff-badge-bg);
+    background: var(--cat-staff);
     color: #fff;
     font-size: 0.62rem;
     font-weight: 700;
@@ -636,11 +634,11 @@
 <div class="staff-gate" id="staffGate" hidden>
   <div class="staff-gate-backdrop" data-staff-gate-close></div>
   <div class="staff-gate-dialog" role="alertdialog" aria-modal="true" aria-labelledby="staffGateTitle" aria-describedby="staffGateDesc">
-    <h2 id="staffGateTitle">🔒 Staff only</h2>
-    <p id="staffGateDesc">This links to Orb, the council staff intranet — only reachable from the school/CGI network. It's not meant for pupils or parents, so just checking before it opens.</p>
+    <h2 id="staffGateTitle">👋 Heads up!</h2>
+    <p id="staffGateDesc">This links to Orb, the council's staff intranet — it only works on the school network, so it probably won't load right now. Nothing secret, just letting you know before it opens!</p>
     <div class="staff-gate-actions">
-      <button type="button" class="staff-gate-cancel" data-staff-gate-close>Cancel</button>
-      <a class="staff-gate-continue" id="staffGateContinue" target="_blank" rel="noopener">Continue</a>
+      <button type="button" class="staff-gate-cancel" data-staff-gate-close>Never mind</button>
+      <a class="staff-gate-continue" id="staffGateContinue" target="_blank" rel="noopener">Continue anyway</a>
     </div>
   </div>
 </div>
@@ -666,7 +664,7 @@ const CAT_META = {
   "Low Mood & Depression":        { color: "var(--cat-depression)", icon: `<path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/>` },
   "Psychosis":                    { color: "var(--cat-psychosis)", icon: `<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>` },
   "General Mental Health":        { color: "var(--cat-general)", icon: `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>` },
-  "Staff Wellbeing":              { color: "var(--cat-staff)", icon: `<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>` },
+  "Staff Wellbeing":              { color: "var(--cat-staff)", icon: `<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>` },
 };
 
 let RESOURCES = [];
@@ -696,10 +694,18 @@ async function loadResources() {
 let activeCategory = "All";
 let searchQuery = "";
 
+function isOrbLink(url) {
+  try {
+    return new URL(url).hostname === "orb.edinburgh.gov.uk";
+  } catch {
+    return false;
+  }
+}
+
 function render() {
   const q = searchQuery.toLowerCase();
   const filtered = RESOURCES.filter(r => {
-    const matchCat = activeCategory === "All" || r.cat === activeCategory;
+    const matchCat = activeCategory === "All" ? r.cat !== "Staff Wellbeing" : r.cat === activeCategory;
     const matchSearch = !q || r.name.toLowerCase().includes(q) || r.desc.toLowerCase().includes(q) || r.cat.toLowerCase().includes(q);
     return matchCat && matchSearch;
   });
@@ -720,15 +726,16 @@ function render() {
 
   cards.innerHTML = filtered.map(r => {
     const meta = CAT_META[r.cat] || { color: "var(--brand)", icon: "" };
+    const needsGate = r.staff && isOrbLink(r.url);
     return `
-    <a class="card" href="${r.url}" target="_blank" rel="noopener" style="--cat-color:${meta.color}"${r.cat === "LGBTQ+" ? ' data-rainbow="true"' : ''}${r.staff ? ' data-staff="true"' : ''}>
+    <a class="card" href="${r.url}" target="_blank" rel="noopener" style="--cat-color:${meta.color}"${r.cat === "LGBTQ+" ? ' data-rainbow="true"' : ''}${needsGate ? ' data-staff="true"' : ''}>
       <div class="card-header">
         <span class="card-icon-chip">
           <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${meta.icon}</svg>
         </span>
         <span class="card-cat">${r.cat}</span>
         ${r.cec ? '<span class="cec-badge">Edinburgh</span>' : ''}
-        ${r.staff ? '<span class="staff-badge">Staff only</span>' : ''}
+        ${needsGate ? '<span class="staff-badge">School network only</span>' : ''}
       </div>
       <span class="card-name">${r.name}</span>
       ${r.desc ? `<span class="card-desc">${r.desc}</span>` : ""}
@@ -739,9 +746,11 @@ function render() {
 
 function renderFilters() {
   const wrap = document.getElementById("filters");
-  wrap.innerHTML = CATEGORIES.map(cat => `
-    <button class="pill${cat === activeCategory ? " active" : ""}" data-cat="${cat}" aria-pressed="${cat === activeCategory}">${cat}</button>
-  `).join("");
+  wrap.innerHTML = CATEGORIES.map(cat => {
+    const meta = CAT_META[cat];
+    const style = meta ? ` style="--cat-color:${meta.color}"` : "";
+    return `<button class="pill${cat === activeCategory ? " active" : ""}" data-cat="${cat}" aria-pressed="${cat === activeCategory}"${style}>${cat}</button>`;
+  }).join("");
 }
 
 document.getElementById("filters").addEventListener("click", e => {
