@@ -22,6 +22,7 @@ jobs:
             --timeout 20
             --retry-wait-time 5
             --user-agent "JGHS-Wellbeing-LinkCheck/1.0 (+https://www.jamesgillespies.co.uk)"
+            --exclude "orb\.edinburgh\.gov\.uk"
             resources.json
           fail: false
           format: markdown

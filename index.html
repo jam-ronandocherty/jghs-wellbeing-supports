@@ -65,6 +65,9 @@
     --cat-depression: #4338CA;
     --cat-psychosis: #7C2D12;
     --cat-general: #78716C;
+    --cat-staff: #1E293B;
+
+    --staff-badge-bg: #92400E;
   }
 
   body {
@@ -477,6 +480,100 @@
     flex-shrink: 0;
   }
 
+  /* ── STAFF BADGE ── */
+  .staff-badge {
+    display: inline-flex;
+    align-items: center;
+    background: var(--staff-badge-bg);
+    color: #fff;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 999px;
+    white-space: nowrap;
+    margin-left: auto;
+    flex-shrink: 0;
+  }
+
+  /* ── STAFF GATE MODAL ── */
+  .staff-gate {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.25rem;
+  }
+  .staff-gate[hidden] { display: none; }
+  .staff-gate-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 20, 30, 0.55);
+  }
+  .staff-gate-dialog {
+    position: relative;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    max-width: 420px;
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .staff-gate-dialog h2 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .staff-gate-dialog p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .staff-gate-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.6rem;
+    margin-top: 0.75rem;
+  }
+  .staff-gate-cancel,
+  .staff-gate-continue {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0.6rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .staff-gate-cancel {
+    background: none;
+    border: 1.5px solid var(--border);
+    color: var(--text);
+  }
+  .staff-gate-cancel:hover { border-color: var(--muted); }
+  .staff-gate-continue {
+    background: var(--cat-staff);
+    border: 1.5px solid var(--cat-staff);
+    color: #fff;
+  }
+  .staff-gate-continue:hover { opacity: 0.88; }
+  .staff-gate-cancel:focus-visible,
+  .staff-gate-continue:focus-visible {
+    outline: 3px solid var(--brand);
+    outline-offset: 2px;
+  }
+
   /* ── FOOTER ── */
   footer {
     text-align: center;
@@ -536,6 +633,18 @@
   <p>James Gillespie's High School · SNUG &amp; Wellbeing Hub · <a href="https://www.jamesgillespies.co.uk" target="_blank" rel="noopener" style="color:var(--brand)">jamesgillespies.co.uk</a></p>
 </footer>
 
+<div class="staff-gate" id="staffGate" hidden>
+  <div class="staff-gate-backdrop" data-staff-gate-close></div>
+  <div class="staff-gate-dialog" role="alertdialog" aria-modal="true" aria-labelledby="staffGateTitle" aria-describedby="staffGateDesc">
+    <h2 id="staffGateTitle">🔒 Staff only</h2>
+    <p id="staffGateDesc">This links to Orb, the council staff intranet — only reachable from the school/CGI network. It's not meant for pupils or parents, so just checking before it opens.</p>
+    <div class="staff-gate-actions">
+      <button type="button" class="staff-gate-cancel" data-staff-gate-close>Cancel</button>
+      <a class="staff-gate-continue" id="staffGateContinue" target="_blank" rel="noopener">Continue</a>
+    </div>
+  </div>
+</div>
+
 <script>
 const CAT_META = {
   "Crisis & Immediate Help":      { color: "var(--cat-crisis)", icon: `<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>` },
@@ -557,6 +666,7 @@ const CAT_META = {
   "Low Mood & Depression":        { color: "var(--cat-depression)", icon: `<path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"/><path d="M16 14v6"/><path d="M8 14v6"/><path d="M12 16v6"/>` },
   "Psychosis":                    { color: "var(--cat-psychosis)", icon: `<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>` },
   "General Mental Health":        { color: "var(--cat-general)", icon: `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>` },
+  "Staff Wellbeing":              { color: "var(--cat-staff)", icon: `<rect x="5" y="11" width="14" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>` },
 };
 
 let RESOURCES = [];
@@ -611,13 +721,14 @@ function render() {
   cards.innerHTML = filtered.map(r => {
     const meta = CAT_META[r.cat] || { color: "var(--brand)", icon: "" };
     return `
-    <a class="card" href="${r.url}" target="_blank" rel="noopener" style="--cat-color:${meta.color}"${r.cat === "LGBTQ+" ? ' data-rainbow="true"' : ''}>
+    <a class="card" href="${r.url}" target="_blank" rel="noopener" style="--cat-color:${meta.color}"${r.cat === "LGBTQ+" ? ' data-rainbow="true"' : ''}${r.staff ? ' data-staff="true"' : ''}>
       <div class="card-header">
         <span class="card-icon-chip">
           <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${meta.icon}</svg>
         </span>
         <span class="card-cat">${r.cat}</span>
         ${r.cec ? '<span class="cec-badge">Edinburgh</span>' : ''}
+        ${r.staff ? '<span class="staff-badge">Staff only</span>' : ''}
       </div>
       <span class="card-name">${r.name}</span>
       ${r.desc ? `<span class="card-desc">${r.desc}</span>` : ""}
@@ -670,14 +781,49 @@ document.addEventListener("keydown", e => {
 });
 
 document.getElementById("cards").addEventListener("click", e => {
-  const btn = e.target.closest("#clearSearchBtn");
-  if (!btn) return;
-  searchQuery = "";
-  searchInput.value = "";
-  updateKbdHint();
-  render();
-  searchInput.focus();
+  const clearBtn = e.target.closest("#clearSearchBtn");
+  if (clearBtn) {
+    searchQuery = "";
+    searchInput.value = "";
+    updateKbdHint();
+    render();
+    searchInput.focus();
+    return;
+  }
+
+  const staffCard = e.target.closest('.card[data-staff="true"]');
+  if (staffCard) {
+    e.preventDefault();
+    openStaffGate(staffCard.href, staffCard);
+  }
 });
+
+const staffGate = document.getElementById("staffGate");
+const staffGateContinue = document.getElementById("staffGateContinue");
+let staffGateTrigger = null;
+
+function openStaffGate(url, trigger) {
+  staffGateTrigger = trigger;
+  staffGateContinue.href = url;
+  staffGate.hidden = false;
+  staffGateContinue.focus();
+  document.addEventListener("keydown", onStaffGateKeydown);
+}
+
+function closeStaffGate() {
+  staffGate.hidden = true;
+  document.removeEventListener("keydown", onStaffGateKeydown);
+  if (staffGateTrigger) staffGateTrigger.focus();
+}
+
+function onStaffGateKeydown(e) {
+  if (e.key === "Escape") closeStaffGate();
+}
+
+staffGate.addEventListener("click", e => {
+  if (e.target.closest("[data-staff-gate-close]")) closeStaffGate();
+});
+staffGateContinue.addEventListener("click", closeStaffGate);
 
 loadResources();
 </script>
