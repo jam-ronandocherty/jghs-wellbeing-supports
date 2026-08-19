@@ -61,6 +61,13 @@
     "cec": true
   },
   {
+    "name": "Emergency Social Work",
+    "desc": "Edinburgh Council's out-of-hours social work service for urgent, immediate concerns. Call 0800 731 6969.",
+    "cat": "Crisis & Immediate Help",
+    "url": "https://www.edinburgh.gov.uk/social-care-health/contact-crisis",
+    "cec": true
+  },
+  {
     "name": "Kooth",
     "desc": "Free online mental wellbeing community for young people.",
     "cat": "Crisis & Immediate Help",
