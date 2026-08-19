@@ -54,6 +54,13 @@
     "url": "https://services.nhslothian.scot/rightcare/mental-health/"
   },
   {
+    "name": "Social Care Direct",
+    "desc": "Edinburgh Council's first point of contact for social care advice and support. Call 0131 200 2327.",
+    "cat": "Crisis & Immediate Help",
+    "url": "https://www.edinburgh.gov.uk/social-care-health/ask-social-care-direct-advice-2/3",
+    "cec": true
+  },
+  {
     "name": "Kooth",
     "desc": "Free online mental wellbeing community for young people.",
     "cat": "Crisis & Immediate Help",
