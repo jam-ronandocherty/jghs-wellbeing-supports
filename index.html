@@ -31,7 +31,9 @@
   :root {
     --brand: #2E7D6B;
     --brand-dark: #1F5C4F;
+    --header-bg: var(--brand);
     --crisis: #C0392B;
+    --crisis-fg: var(--crisis);
     --crisis-light: #FDF0EF;
     --bg: #F5F6FA;
     --card: #FFFFFF;
@@ -71,6 +73,52 @@
     --cat-staff: #CA8A04;
   }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      /* header keeps the brand teal for contrast with its white text;
+         everywhere else --brand is used as foreground text/outline,
+         so it gets lightened for legibility on dark backgrounds */
+      --header-bg: #2E7D6B;
+      --brand: #57C9AA;
+      --brand-dark: #7EDDC4;
+      /* crisis-link buttons keep the original red bg with white text;
+         --crisis-fg lightens the color only where it's used as text */
+      --crisis-fg: #F87171;
+      --crisis-light: #2A1416;
+      --crisis-border: #55282A;
+      --bg: #12141C;
+      --card: #1B1F2A;
+      --text: #ECEDF1;
+      --muted: #9AA1AE;
+      --border: #2B303D;
+      --pill-bg: #232838;
+      --pill-text: #C7CCD6;
+    }
+
+    .search-wrap input { background-color: var(--card); }
+
+    .card-icon-chip {
+      background: color-mix(in srgb, var(--cat-color, var(--brand)) 22%, black);
+    }
+    .card-cat, .card-icon {
+      color: color-mix(in srgb, var(--cat-color, var(--brand)) 65%, white);
+    }
+    .pill:hover {
+      border-color: color-mix(in srgb, var(--cat-color, var(--brand)) 65%, white);
+      color: color-mix(in srgb, var(--cat-color, var(--brand)) 65%, white);
+    }
+    .pill:focus-visible {
+      outline-color: color-mix(in srgb, var(--cat-color, var(--brand)) 65%, white);
+    }
+    .card:hover, .card:focus-visible {
+      border-color: color-mix(in srgb, var(--cat-color, var(--brand)) 65%, white);
+    }
+    .card:focus-visible {
+      outline-color: color-mix(in srgb, var(--cat-color, var(--brand)) 65%, white);
+    }
+  }
+
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background: var(--bg);
@@ -81,7 +129,7 @@
 
   /* ── HEADER ── */
   header {
-    background: var(--brand);
+    background: var(--header-bg);
     color: #fff;
     padding: 2rem 1.25rem 2.5rem;
   }
@@ -214,7 +262,7 @@
   .crisis-banner h2 {
     font-size: 0.95rem;
     font-weight: 700;
-    color: var(--crisis);
+    color: var(--crisis-fg);
     display: flex;
     align-items: center;
     gap: 0.4rem;
@@ -246,7 +294,7 @@
   }
   .crisis-link:hover { opacity: 0.85; }
   .crisis-link:focus-visible {
-    outline: 3px solid var(--crisis);
+    outline: 3px solid var(--crisis-fg);
     outline-offset: 2px;
   }
 
@@ -417,13 +465,13 @@
     color: var(--muted);
   }
   .no-results-crisis a {
-    color: var(--crisis);
+    color: var(--crisis-fg);
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 2px;
   }
   .no-results-crisis a:focus-visible {
-    outline: 3px solid var(--crisis);
+    outline: 3px solid var(--crisis-fg);
     outline-offset: 2px;
     border-radius: 4px;
   }
