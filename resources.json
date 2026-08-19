@@ -51,7 +51,7 @@
     "name": "NHS Lothian — Mental Health Assessment Service",
     "desc": "Urgent mental health assessment for people in Edinburgh. Call 0131 537 6000 or 0131 286 8137.",
     "cat": "Crisis & Immediate Help",
-    "url": "https://www.nhslothian.scot/YourHealth/MentalHealth/"
+    "url": "https://services.nhslothian.scot/rightcare/mental-health/"
   },
   {
     "name": "Kooth",
@@ -93,7 +93,7 @@
     "name": "Sleep Scotland",
     "desc": "Help for children and young people with sleep problems.",
     "cat": "Anxiety & Sleep",
-    "url": "https://sleepscotland.org/"
+    "url": "https://sleepaction.org/"
   },
   {
     "name": "BRAVE Online",
@@ -197,13 +197,7 @@
     "name": "Calm Harm",
     "desc": "App to help manage the urge to self-harm.",
     "cat": "Self-Harm & Suicidal Ideation",
-    "url": "https://calmharm.co.uk/"
-  },
-  {
-    "name": "Joshua Nolan Foundation",
-    "desc": "Counselling and support around suicide for young people.",
-    "cat": "Self-Harm & Suicidal Ideation",
-    "url": "https://www.joshuanolanfoundation.org/"
+    "url": "https://calmharm.stem4.org.uk/"
   },
   {
     "name": "Self Injury Support",
@@ -397,7 +391,7 @@
     "name": "NHS Lothian — Young Carers",
     "desc": "Information and support for young carers from NHS Lothian.",
     "cat": "Young Carers",
-    "url": "https://services.nhslothian.scot/supportingcarers/Pages/YoungCarers.aspx",
+    "url": "https://services.nhslothian.scot/supportingcarers/young-carers/",
     "cec": true
   },
   {
@@ -444,7 +438,7 @@
     "name": "Roshni",
     "desc": "Health, safety and wellbeing of minority ethnic children and families.",
     "cat": "Cultural Support",
-    "url": "https://sen.scot/network/members/roshni/",
+    "url": "https://www.roshni.org.uk/",
     "cec": true
   },
   {
@@ -621,7 +615,7 @@
     "name": "Space Scot",
     "desc": "Youth befriending, young carers services and counselling for children, young people and families in South West Edinburgh.",
     "cat": "Parents & Carers",
-    "url": "https://spacescot.org/youthandfamilies",
+    "url": "https://spacescot.org/",
     "cec": true
   },
   {
