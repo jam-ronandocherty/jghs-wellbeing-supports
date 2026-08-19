@@ -326,13 +326,6 @@
     "url": "https://www.crusescotland.org.uk/"
   },
   {
-    "name": "Wellbeing Lothian — Loss & Bereavement",
-    "desc": "Local support for people dealing with loss.",
-    "cat": "Bereavement",
-    "url": "https://www.wellbeinglothian.scot/area/loss-and-bereavement/support/",
-    "cec": true
-  },
-  {
     "name": "iThrive Edinburgh — Bereavement",
     "desc": "Self-help guides for coping with bereavement and grief.",
     "cat": "Bereavement",
@@ -415,13 +408,6 @@
     "cec": true
   },
   {
-    "name": "Saheliya",
-    "desc": "Mental health support for Black and minority ethnic women and girls.",
-    "cat": "Cultural Support",
-    "url": "https://www.saheliya.co.uk/",
-    "cec": true
-  },
-  {
     "name": "Black Minds Matter UK",
     "desc": "Connecting Black individuals and families with mental health support.",
     "cat": "Cultural Support",
@@ -466,13 +452,6 @@
     "desc": "Supporting young women and girls.",
     "cat": "Cultural Support",
     "url": "https://www.shescotland.org.uk/",
-    "cec": true
-  },
-  {
-    "name": "Sunflower Garden",
-    "desc": "Counselling, art and play therapy for children aged 5–18 in Edinburgh affected by a family member's substance misuse.",
-    "cat": "Substance Misuse",
-    "url": "https://www.crossreach.org.uk/our-locations/sunflower-garden",
     "cec": true
   },
   {
@@ -886,12 +865,6 @@
     "url": "https://www.calm.com/"
   },
   {
-    "name": "Happify",
-    "desc": "Science-based activities and games to help overcome negative thoughts, stress and life's challenges.",
-    "cat": "Apps & Websites",
-    "url": "https://www.happify.com/"
-  },
-  {
     "name": "Daylight",
     "desc": "Confidential app for young people aged 16+ to help take control of anxiety.",
     "cat": "Apps & Websites",
@@ -1075,13 +1048,6 @@
     "desc": "Education Scotland framework to support those working in educational contexts.",
     "cat": "Staff Wellbeing",
     "url": "https://education.gov.scot/professional-learning/leading-professional-learning/inclusion-wellbeing-equalities-professional-learning-framework/",
-    "staff": true
-  },
-  {
-    "name": "Positive Mental Wellbeing: Resources to Support Children and Young People",
-    "desc": "Education Scotland resources to support the mental wellbeing of children and young people.",
-    "cat": "Staff Wellbeing",
-    "url": "https://education.gov.scot/resources/positive-mental-wellbeing-resources-to-support-children-and-young-people/",
     "staff": true
   },
   {
