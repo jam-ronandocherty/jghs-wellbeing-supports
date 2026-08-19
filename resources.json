@@ -900,5 +900,61 @@
     "desc": "Free app providing daily tools and techniques, based on CBT and ACT, to support positive mental health.",
     "cat": "Apps & Websites",
     "url": "https://apps.apple.com/us/app/whats-up-a-mental-health-app/id968251160"
+  },
+  {
+    "name": "Orb — Employee Wellbeing",
+    "desc": "City of Edinburgh Council staff intranet home page: wellbeing support and services for employees.",
+    "cat": "Staff Wellbeing",
+    "url": "https://orb.edinburgh.gov.uk/employee-wellbeing",
+    "staff": true
+  },
+  {
+    "name": "PAM Wellness — Employee Assistance Programme",
+    "desc": "Confidential EAP for council staff, available 24/7 — self-help resources, specialist advice and counselling. Call 0800 882 4102, or self-refer via the PAM Wellness portal (registration code on this page).",
+    "cat": "Staff Wellbeing",
+    "url": "https://orb.edinburgh.gov.uk/employee-wellbeing/employee-assistance-programme",
+    "staff": true
+  },
+  {
+    "name": "Able Futures",
+    "desc": "Free, confidential nine-month mental health support service for people in work, delivered through Access to Work — a dedicated mental health professional, no waiting list. Call 0800 321 3137.",
+    "cat": "Staff Wellbeing",
+    "url": "https://able-futures.co.uk/mental-health-support",
+    "staff": true
+  },
+  {
+    "name": "Occupational Health",
+    "desc": "Council occupational health service for staff, supporting physical and mental health at work.",
+    "cat": "Staff Wellbeing",
+    "url": "https://orb.edinburgh.gov.uk/employee-wellbeing/occupational-health?documentId=2233&categoryId=200911",
+    "staff": true
+  },
+  {
+    "name": "Listening Support — Let's Talk",
+    "desc": "Email letstalk@edinburgh.gov.uk to be put in touch with an internally trained coach or chaplain for a confidential listening conversation.",
+    "cat": "Staff Wellbeing",
+    "url": "mailto:letstalk@edinburgh.gov.uk",
+    "staff": true
+  },
+  {
+    "name": "Colleague Support Networks",
+    "desc": "Directory of staff peer support networks across the council.",
+    "cat": "Staff Wellbeing",
+    "url": "https://orb.edinburgh.gov.uk/colleague-networks",
+    "staff": true
+  },
+  {
+    "name": "Personal Wellbeing Plan",
+    "desc": "A template to help you think through what helps you stay well and build healthy routines.",
+    "cat": "Staff Wellbeing",
+    "url": "https://orb.edinburgh.gov.uk/downloads/file/31386/wellbeing-plan",
+    "staff": true
+  },
+  {
+    "name": "Wellbeing Check-in Tools",
+    "desc": "Tools to help structure a wellbeing conversation with your manager or colleagues.",
+    "cat": "Staff Wellbeing",
+    "url": "https://orb.edinburgh.gov.uk/downloads/download/11866/wellbeing-tools",
+    "staff": true
   }
 ]
