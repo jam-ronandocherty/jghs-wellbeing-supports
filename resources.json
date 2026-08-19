@@ -326,13 +326,6 @@
     "url": "https://www.crusescotland.org.uk/"
   },
   {
-    "name": "Wellbeing Lothian — Loss & Bereavement",
-    "desc": "Local support for people dealing with loss.",
-    "cat": "Bereavement",
-    "url": "https://www.wellbeinglothian.scot/area/loss-and-bereavement/support/",
-    "cec": true
-  },
-  {
     "name": "iThrive Edinburgh — Bereavement",
     "desc": "Self-help guides for coping with bereavement and grief.",
     "cat": "Bereavement",
@@ -415,13 +408,6 @@
     "cec": true
   },
   {
-    "name": "Saheliya",
-    "desc": "Mental health support for Black and minority ethnic women and girls.",
-    "cat": "Cultural Support",
-    "url": "https://www.saheliya.co.uk/",
-    "cec": true
-  },
-  {
     "name": "Black Minds Matter UK",
     "desc": "Connecting Black individuals and families with mental health support.",
     "cat": "Cultural Support",
@@ -466,13 +452,6 @@
     "desc": "Supporting young women and girls.",
     "cat": "Cultural Support",
     "url": "https://www.shescotland.org.uk/",
-    "cec": true
-  },
-  {
-    "name": "Sunflower Garden",
-    "desc": "Counselling, art and play therapy for children aged 5–18 in Edinburgh affected by a family member's substance misuse.",
-    "cat": "Substance Misuse",
-    "url": "https://www.crossreach.org.uk/our-locations/sunflower-garden",
     "cec": true
   },
   {
@@ -856,18 +835,6 @@
     "url": "https://www.getselfhelp.co.uk/"
   },
   {
-    "name": "CAMHS Resources — Apps",
-    "desc": "Best mental health apps for teens, reviewed by CAMHS.",
-    "cat": "Apps & Websites",
-    "url": "https://www.camhs-resources.co.uk/apps-1"
-  },
-  {
-    "name": "CAMHS Resources — Websites",
-    "desc": "Useful websites to support mental health and wellbeing.",
-    "cat": "Apps & Websites",
-    "url": "https://www.camhs-resources.co.uk/websites"
-  },
-  {
     "name": "Young Minds",
     "desc": "UK's leading charity fighting for children and young people's mental health.",
     "cat": "Apps & Websites",
@@ -896,12 +863,6 @@
     "desc": "A mindfulness app for beginners, with a section specifically suited for children and young people.",
     "cat": "Apps & Websites",
     "url": "https://www.calm.com/"
-  },
-  {
-    "name": "Happify",
-    "desc": "Science-based activities and games to help overcome negative thoughts, stress and life's challenges.",
-    "cat": "Apps & Websites",
-    "url": "https://www.happify.com/"
   },
   {
     "name": "Daylight",
@@ -1087,13 +1048,6 @@
     "desc": "Education Scotland framework to support those working in educational contexts.",
     "cat": "Staff Wellbeing",
     "url": "https://education.gov.scot/professional-learning/leading-professional-learning/inclusion-wellbeing-equalities-professional-learning-framework/",
-    "staff": true
-  },
-  {
-    "name": "Positive Mental Wellbeing: Resources to Support Children and Young People",
-    "desc": "Education Scotland resources to support the mental wellbeing of children and young people.",
-    "cat": "Staff Wellbeing",
-    "url": "https://education.gov.scot/resources/positive-mental-wellbeing-resources-to-support-children-and-young-people/",
     "staff": true
   },
   {
