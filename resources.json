@@ -612,16 +612,29 @@
     "cec": true
   },
   {
+    "name": "VOCAL — Parent Carer Support",
+    "desc": "Edinburgh support for parents and carers of disabled or neurodivergent children and young people, including one-to-one help, peer groups, training and transition guidance.",
+    "cat": "Parents & Carers",
+    "url": "https://www.vocal.org.uk/our-services/specialist-support/parent-carer-support/",
+    "cec": true
+  },
+  {
     "name": "National Autistic Society",
     "desc": "UK's leading charity for autistic people and their families.",
     "cat": "ADHD & Autism",
     "url": "https://www.autism.org.uk/"
   },
   {
-    "name": "Scottish Autism",
-    "desc": "Right Click online training and information for parents of children and teenagers with autism.",
+    "name": "Scottish Autism Advice Line",
+    "desc": "Confidential autism advice, guidance and signposting for autistic people, families, friends and professionals. Call 01259 222 022 or use live chat during opening hours.",
     "cat": "ADHD & Autism",
-    "url": "https://www.scottishautism.org/"
+    "url": "https://www.scottishautism.org/service-locations/advice-line/"
+  },
+  {
+    "name": "Scottish Autism — Click and Connect",
+    "desc": "Free, low-pressure online groups for autistic young people, adults, parents and carers across Scotland, with options focused on creativity, connection and wellbeing.",
+    "cat": "ADHD & Autism",
+    "url": "https://www.scottishautism.org/service-locations/click-and-connect/"
   },
   {
     "name": "Autism Initiatives",
@@ -679,10 +692,29 @@
   },
   {
     "name": "Number 6",
-    "desc": "Free social opportunities, advice and support for autistic adults aged 16+ in the Lothians.",
+    "desc": "Free, autism-specific Edinburgh social groups and short-term one-to-one advice for people aged 16+ with a formal diagnosis and no learning disability. Self- and third-party referrals accepted.",
     "cat": "ADHD & Autism",
     "url": "https://autisminitiatives.org/number-6/",
     "cec": true
+  },
+  {
+    "name": "Salvesen Mindroom Centre — Young People",
+    "desc": "Advice, advocacy and transition support for neurodivergent young people under 25, including those with autism. Helps young people voice their needs and plan for life after school; no diagnosis is required.",
+    "cat": "ADHD & Autism",
+    "url": "https://www.mindroom.org/help-and-support/children-and-young-people/",
+    "cec": true
+  },
+  {
+    "name": "National Autistic Society — Empower Up",
+    "desc": "Scotland-wide online autism programme for young people aged 12–18, building confidence, social-navigation strategies and peer connections. Self-referral is available.",
+    "cat": "ADHD & Autism",
+    "url": "https://www.autism.org.uk/what-we-do/scotland/empower-up"
+  },
+  {
+    "name": "Enquire — Additional Support for Learning",
+    "desc": "Free advice on additional-support rights in Scottish education, including support for autistic pupils and planning for leaving school. Call 0345 123 2303 or browse transition guidance online.",
+    "cat": "ADHD & Autism",
+    "url": "https://enquire.org.uk/theme/transitions/"
   },
   {
     "name": "Mencap",
