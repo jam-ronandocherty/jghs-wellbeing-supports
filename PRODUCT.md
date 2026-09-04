@@ -10,6 +10,8 @@ web
 
 static HTML/CSS/vanilla JS (`index.html`, no build step). Resource data lives in `resources.json`, loaded via `fetch()` at runtime — this means local preview requires a local HTTP server (e.g. `npx serve .`, already configured in `.claude/launch.json`); opening `index.html` directly via `file://` will not load the resource list due to browser CORS restrictions on `fetch()` of local files.
 
+One small server-side component: `functions/api/log-miss.js`, a Cloudflare Pages Function (auto-deployed with zero config alongside the static site) that logs anonymised zero-result search terms to a KV namespace bound as `MISSED_SEARCHES`, so maintainers can spot content gaps via the Cloudflare dashboard. It's a fire-and-forget beacon the client never waits on; it 404s harmlessly under plain `npx serve` (which doesn't run Pages Functions) without affecting the page. Cloudflare Web Analytics (cookie-free, no PII) is also wired in via a beacon script tag in `<head>` for real usage visibility.
+
 ## Users
 
 Three audiences share one page:
@@ -33,9 +35,10 @@ Not a general information page — a curated, categorized directory combining na
 
 ## Capabilities and Constraints
 
-- Single static HTML page, no login, no backend — must stay deployable as-is (e.g. to Cloudflare Pages, per prior commit history).
-- Search and category-pill filtering over a client-side array of resources (name, description, category, URL, optional `cec` flag for Edinburgh-specific services).
+- Single static HTML page, no login — must stay deployable as-is (e.g. to Cloudflare Pages, per prior commit history). One narrow, deliberate exception: a Cloudflare Pages Function (see Stack) for anonymised zero-result search logging, used only as a fire-and-forget background beacon that never blocks, gates, or is visible to the visitor.
+- Search and category-pill filtering over a client-side array of resources (name, description, category, URL, optional `cec` flag for Edinburgh-specific services, optional `tags` array of lay/alternate search terms).
 - Crisis/emergency contact banner is a distinct, first-class element on the page, not just another card.
+- Filter state (category + search query) is reflected in the URL (`?cat=`, `?q=`) so links can point directly at a filtered view; each card has a "copy link" button that copies a URL pointing straight to that one resource.
 
 ## Brand Commitments
 

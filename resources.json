@@ -77,7 +77,8 @@
     "name": "Self-harm support (14–19s)",
     "desc": "Free online support for young people who self-harm.",
     "cat": "Crisis & Immediate Help",
-    "url": "https://www.selfharm.co.uk/"
+    "url": "https://www.selfharm.co.uk/",
+    "tags": ["self harm", "cutting", "suicide", "suicidal"]
   },
   {
     "name": "stem4",
@@ -89,19 +90,22 @@
     "name": "Anxiety UK",
     "desc": "Support, advice and therapies for people with anxiety.",
     "cat": "Anxiety & Sleep",
-    "url": "https://www.anxietyuk.org.uk/"
+    "url": "https://www.anxietyuk.org.uk/",
+    "tags": ["panic attack", "stress", "worry"]
   },
   {
     "name": "Teen Sleep Hub",
     "desc": "Advice and tips to help teenagers sleep better.",
     "cat": "Anxiety & Sleep",
-    "url": "https://teensleephub.org.uk/"
+    "url": "https://teensleephub.org.uk/",
+    "tags": ["insomnia"]
   },
   {
     "name": "Sleep Scotland",
     "desc": "Help for children and young people with sleep problems.",
     "cat": "Anxiety & Sleep",
-    "url": "https://sleepaction.org/"
+    "url": "https://sleepaction.org/",
+    "tags": ["insomnia"]
   },
   {
     "name": "BRAVE Online",
@@ -155,7 +159,8 @@
     "desc": "Advice for parents and carers on managing school-related anxiety.",
     "cat": "Anxiety & Sleep",
     "url": "https://www.edinburgh.gov.uk/downloads/file/33288/managing-school-anxiety-advice-for-parents",
-    "cec": true
+    "cec": true,
+    "tags": ["exam stress", "school stress", "panic attack"]
   },
   {
     "name": "Kidscape",
@@ -173,219 +178,254 @@
     "name": "Harmless",
     "desc": "Support for people who self-harm or are at risk of self-harm.",
     "cat": "Self-Harm & Suicidal Ideation",
-    "url": "https://harmless.org.uk/"
+    "url": "https://harmless.org.uk/",
+    "tags": ["self harm", "cutting", "suicide", "suicidal"]
   },
   {
     "name": "National Self Harm Network",
     "desc": "Support and information for people who self-harm.",
     "cat": "Self-Harm & Suicidal Ideation",
-    "url": "https://www.nshn.co.uk/"
+    "url": "https://www.nshn.co.uk/",
+    "tags": ["self harm", "cutting", "suicide", "suicidal"]
   },
   {
     "name": "Penumbra",
     "desc": "Edinburgh self-harm service — support for 16+ and families.",
     "cat": "Self-Harm & Suicidal Ideation",
     "url": "https://www.penumbra.org.uk/",
-    "cec": true
+    "cec": true,
+    "tags": ["self harm", "cutting", "suicide", "suicidal"]
   },
   {
     "name": "SAMH",
     "desc": "Scottish Association for Mental Health — information and support.",
     "cat": "Self-Harm & Suicidal Ideation",
-    "url": "https://www.samh.org.uk/"
+    "url": "https://www.samh.org.uk/",
+    "tags": ["self harm", "suicide", "suicidal"]
   },
   {
     "name": "The Junction",
     "desc": "Support for young people in Edinburgh aged 12–21.",
     "cat": "Self-Harm & Suicidal Ideation",
     "url": "https://the-junction.org/",
-    "cec": true
+    "cec": true,
+    "tags": ["self harm", "suicide", "suicidal"]
   },
   {
     "name": "Calm Harm",
     "desc": "App to help manage the urge to self-harm.",
     "cat": "Self-Harm & Suicidal Ideation",
-    "url": "https://calmharm.stem4.org.uk/"
+    "url": "https://calmharm.stem4.org.uk/",
+    "tags": ["self harm", "cutting"]
   },
   {
     "name": "Self Injury Support",
     "desc": "Support for women and girls affected by self-injury, trauma and abuse.",
     "cat": "Self-Harm & Suicidal Ideation",
-    "url": "https://www.selfinjurysupport.org.uk/"
+    "url": "https://www.selfinjurysupport.org.uk/",
+    "tags": ["self harm", "cutting"]
   },
   {
     "name": "Beat Eating Disorders",
     "desc": "UK's leading charity for people with eating disorders.",
     "cat": "Eating Disorders & OCD",
-    "url": "https://www.beateatingdisorders.org.uk/"
+    "url": "https://www.beateatingdisorders.org.uk/",
+    "tags": ["anorexia", "bulimia", "binge eating", "food"]
   },
   {
     "name": "OCD UK",
     "desc": "Helping you understand and manage Obsessive-Compulsive Disorder.",
     "cat": "Eating Disorders & OCD",
-    "url": "https://www.ocduk.org/"
+    "url": "https://www.ocduk.org/",
+    "tags": ["obsessive compulsive", "intrusive thoughts", "compulsions"]
   },
   {
     "name": "HATW — Heads Above the Waves",
     "desc": "Raising awareness of depression and self-harm in young people.",
     "cat": "Eating Disorders & OCD",
-    "url": "https://hatw.co.uk/"
+    "url": "https://hatw.co.uk/",
+    "tags": ["depression", "sad", "self harm", "cutting"]
   },
   {
     "name": "iThrive Edinburgh — OCD resources",
     "desc": "Self-help guides and resources for OCD.",
     "cat": "Eating Disorders & OCD",
     "url": "https://ithriveedinburgh.org.uk/self-help/self-help-guides-resources/obsessive-compulsions/",
-    "cec": true
+    "cec": true,
+    "tags": ["obsessive compulsive", "intrusive thoughts", "compulsions"]
   },
   {
     "name": "Rape Crisis Scotland",
     "desc": "Support for anyone affected by rape or sexual abuse.",
     "cat": "Abuse",
-    "url": "https://www.rapecrisisscotland.org.uk/"
+    "url": "https://www.rapecrisisscotland.org.uk/",
+    "tags": ["sexual assault", "rape"]
   },
   {
     "name": "Victim Support Scotland",
     "desc": "Support for people affected by domestic abuse.",
     "cat": "Abuse",
-    "url": "https://victimsupport.scot/"
+    "url": "https://victimsupport.scot/",
+    "tags": ["domestic violence", "domestic abuse"]
   },
   {
     "name": "Scottish Women's Rights Centre",
     "desc": "Legal rights and support for women experiencing violence.",
     "cat": "Abuse",
-    "url": "https://www.scottishwomensrightscentre.org.uk/"
+    "url": "https://www.scottishwomensrightscentre.org.uk/",
+    "tags": ["domestic violence", "domestic abuse", "sexual assault"]
   },
   {
     "name": "Abused Men in Scotland",
     "desc": "Support and information for men who have experienced abuse.",
     "cat": "Abuse",
-    "url": "https://abusedmeninscotland.org/"
+    "url": "https://abusedmeninscotland.org/",
+    "tags": ["domestic violence", "domestic abuse"]
   },
   {
     "name": "Lucy Faithfull Foundation",
     "desc": "Child sexual abuse prevention and support.",
     "cat": "Abuse",
-    "url": "https://www.lucyfaithfull.org.uk/"
+    "url": "https://www.lucyfaithfull.org.uk/",
+    "tags": ["child sexual abuse", "sexual assault"]
   },
   {
     "name": "Edinburgh Women's Aid",
     "desc": "Support for women and children experiencing domestic abuse.",
     "cat": "Abuse",
     "url": "https://edinwomensaid.co.uk/",
-    "cec": true
+    "cec": true,
+    "tags": ["domestic violence", "domestic abuse"]
   },
   {
     "name": "The STAR Project",
     "desc": "Confidential support for young people aged 12–18 in Edinburgh experiencing sexual harm, plus support for their families.",
     "cat": "Abuse",
     "url": "https://www.ercc.scot/services/star-project/",
-    "cec": true
+    "cec": true,
+    "tags": ["sexual abuse", "sexual assault", "rape"]
   },
   {
     "name": "SARCS — Sexual Assault Response",
     "desc": "NHS service providing healthcare and support in the days after rape or sexual assault. No obligation to report to police.",
     "cat": "Abuse",
     "url": "https://www.nhsinform.scot/turn-to-sarcs/",
-    "cec": true
+    "cec": true,
+    "tags": ["rape", "sexual assault"]
   },
   {
     "name": "Abuse — Mind",
     "desc": "Information and support for people affected by abuse, mainly listing national organisations.",
     "cat": "Abuse",
-    "url": "https://www.mind.org.uk/information-support/guides-to-support-and-services/abuse/"
+    "url": "https://www.mind.org.uk/information-support/guides-to-support-and-services/abuse/",
+    "tags": ["domestic violence", "domestic abuse", "sexual abuse", "sexual assault"]
   },
   {
     "name": "Stop It Now!",
     "desc": "Works to reduce child sexual abuse, with resources on online safety and for parents concerned about sexual behaviour.",
     "cat": "Abuse",
-    "url": "https://www.stopitnow.org.uk/"
+    "url": "https://www.stopitnow.org.uk/",
+    "tags": ["child sexual abuse", "sexual assault"]
   },
   {
     "name": "Keeping Children Safe in Scotland",
     "desc": "Scottish Government guides about child protection processes, written for children, young people and families.",
     "cat": "Abuse",
-    "url": "https://www.childprotection-resource-scotland.co.uk/"
+    "url": "https://www.childprotection-resource-scotland.co.uk/",
+    "tags": ["child abuse", "child protection"]
   },
   {
     "name": "Scotland's Domestic Abuse and Forced Marriage Helpline",
     "desc": "24-hour helpline if you feel scared of your partner or are worried about someone you know. Call 0800 027 1234.",
     "cat": "Abuse",
-    "url": "https://sdafmh.org.uk/"
+    "url": "https://sdafmh.org.uk/",
+    "tags": ["domestic violence", "forced marriage"]
   },
   {
     "name": "Cruse Scotland",
     "desc": "Bereavement support for people in Scotland.",
     "cat": "Bereavement",
-    "url": "https://www.crusescotland.org.uk/"
+    "url": "https://www.crusescotland.org.uk/",
+    "tags": ["death", "grief", "loss", "dying"]
   },
   {
     "name": "iThrive Edinburgh — Bereavement",
     "desc": "Self-help guides for coping with bereavement and grief.",
     "cat": "Bereavement",
     "url": "https://ithriveedinburgh.org.uk/self-help/self-help-guides-resources/bereavement-and-grief/",
-    "cec": true
+    "cec": true,
+    "tags": ["death", "grief", "loss", "dying"]
   },
   {
     "name": "Held in Our Hearts",
     "desc": "Baby loss counselling and support.",
     "cat": "Bereavement",
-    "url": "https://heldinourhearts.org.uk/"
+    "url": "https://heldinourhearts.org.uk/",
+    "tags": ["death", "grief", "loss", "baby loss", "miscarriage", "stillbirth"]
   },
   {
     "name": "Mind — Bereavement by Suicide",
     "desc": "Support for people bereaved by suicide.",
     "cat": "Bereavement",
-    "url": "https://www.mind.org.uk/information-support/guides-to-support-and-services/bereavement/bereavement-by-suicide/"
+    "url": "https://www.mind.org.uk/information-support/guides-to-support-and-services/bereavement/bereavement-by-suicide/",
+    "tags": ["death", "grief", "loss", "dying"]
   },
   {
     "name": "At a Loss",
     "desc": "Directory of bereavement support services.",
     "cat": "Bereavement",
-    "url": "https://www.ataloss.org/"
+    "url": "https://www.ataloss.org/",
+    "tags": ["death", "grief", "loss", "dying"]
   },
   {
     "name": "Richmond's Hope",
     "desc": "Support for children and young people aged 4–18 in Edinburgh and Midlothian who have been bereaved.",
     "cat": "Bereavement",
     "url": "https://www.richmondshope.org.uk/",
-    "cec": true
+    "cec": true,
+    "tags": ["death", "grief", "loss", "dying"]
   },
   {
     "name": "Winston's Wish",
     "desc": "Charity for bereaved children and their families after the death of a parent or sibling.",
     "cat": "Bereavement",
-    "url": "https://winstonswish.org/"
+    "url": "https://winstonswish.org/",
+    "tags": ["death", "grief", "loss", "dying"]
   },
   {
     "name": "Child Bereavement UK",
     "desc": "Supports families and educates professionals when a child is facing bereavement.",
     "cat": "Bereavement",
-    "url": "https://www.childbereavementuk.org/"
+    "url": "https://www.childbereavementuk.org/",
+    "tags": ["death", "grief", "loss", "dying"]
   },
   {
     "name": "Hope Again",
     "desc": "Cruse's website for children and young people experiencing bereavement.",
     "cat": "Bereavement",
-    "url": "https://www.hopeagain.org.uk/"
+    "url": "https://www.hopeagain.org.uk/",
+    "tags": ["death", "grief", "loss", "dying"]
   },
   {
     "name": "LGBT Youth Scotland",
     "desc": "Scotland's national charity for LGBTQ+ young people.",
     "cat": "LGBTQ+",
-    "url": "https://www.lgbtyouth.org.uk/"
+    "url": "https://www.lgbtyouth.org.uk/",
+    "tags": ["gay", "lesbian", "trans", "transgender", "bisexual", "queer", "coming out"]
   },
   {
     "name": "The Proud Trust",
     "desc": "Helping LGBT+ young people to help themselves and others.",
     "cat": "LGBTQ+",
-    "url": "https://www.theproudtrust.org/"
+    "url": "https://www.theproudtrust.org/",
+    "tags": ["gay", "lesbian", "trans", "transgender", "bisexual", "queer", "coming out"]
   },
   {
     "name": "Stonewall",
     "desc": "Information, support and advice for LGBTQ+ people.",
     "cat": "LGBTQ+",
-    "url": "https://www.stonewall.org.uk/"
+    "url": "https://www.stonewall.org.uk/",
+    "tags": ["gay", "lesbian", "trans", "transgender", "bisexual", "queer", "coming out"]
   },
   {
     "name": "Edinburgh Young Carers",
@@ -452,27 +492,31 @@
     "name": "Crew Scotland",
     "desc": "Harm reduction information about drugs, alcohol and related issues.",
     "cat": "Substance Misuse",
-    "url": "https://www.crew.scot/"
+    "url": "https://www.crew.scot/",
+    "tags": ["drugs", "alcohol", "drinking", "vaping", "smoking"]
   },
   {
     "name": "Talk to Frank",
     "desc": "Honest information about drugs — for young people.",
     "cat": "Substance Misuse",
-    "url": "https://www.talktofrank.com/"
+    "url": "https://www.talktofrank.com/",
+    "tags": ["drugs", "alcohol", "vaping", "smoking"]
   },
   {
     "name": "Rowan Alba",
     "desc": "Community alcohol awareness service, supported accommodation and one-to-one support in Edinburgh.",
     "cat": "Substance Misuse",
     "url": "https://www.rowanalba.org/",
-    "cec": true
+    "cec": true,
+    "tags": ["alcohol", "drinking"]
   },
   {
     "name": "YPSUS — Young People Substance Use Service",
     "desc": "Advice, information and one-to-one support for young people up to 21 who use drugs or alcohol in Edinburgh.",
     "cat": "Substance Misuse",
     "url": "https://www.edinburghadp.co.uk/information-advice-support/help-and-support-for-young-people",
-    "cec": true
+    "cec": true,
+    "tags": ["drugs", "alcohol", "drinking", "vaping", "smoking"]
   },
   {
     "name": "MindEd",
@@ -622,13 +666,15 @@
     "name": "National Autistic Society",
     "desc": "UK's leading charity for autistic people and their families.",
     "cat": "ADHD & Autism",
-    "url": "https://www.autism.org.uk/"
+    "url": "https://www.autism.org.uk/",
+    "tags": ["neurodivergent", "asd"]
   },
   {
     "name": "Scottish Autism Advice Line",
     "desc": "Confidential autism advice, guidance and signposting for autistic people, families, friends and professionals. Call 01259 222 022 or use live chat during opening hours.",
     "cat": "ADHD & Autism",
-    "url": "https://www.scottishautism.org/service-locations/advice-line/"
+    "url": "https://www.scottishautism.org/service-locations/advice-line/",
+    "tags": ["neurodivergent", "asd"]
   },
   {
     "name": "Scottish Autism — Click and Connect",
@@ -681,7 +727,8 @@
     "name": "Scottish ADHD Coalition",
     "desc": "Support to adults and children with ADHD and their families.",
     "cat": "ADHD & Autism",
-    "url": "https://www.scottishadhdcoalition.org/"
+    "url": "https://www.scottishadhdcoalition.org/",
+    "tags": ["neurodivergent"]
   },
   {
     "name": "EPIC — University of Edinburgh",
@@ -804,7 +851,8 @@
     "name": "Living Life",
     "desc": "Free NHS Scotland phone service offering Cognitive Behavioural Therapy (age 16+).",
     "cat": "Low Mood & Depression",
-    "url": "https://www.nhs24.scot/how-we-can-help/living-life/"
+    "url": "https://www.nhs24.scot/how-we-can-help/living-life/",
+    "tags": ["depression", "depressed", "sad", "low mood"]
   },
   {
     "name": "What is psychosis?",
