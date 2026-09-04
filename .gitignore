@@ -1,3 +1,5 @@
 .DS_Store
 .claude/settings.local.json
 .playwright-mcp/
+.claude/skills/impeccable/scripts/.impeccable/
+.claude/skills/impeccable/scripts/data/
