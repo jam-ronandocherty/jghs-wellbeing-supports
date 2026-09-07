@@ -628,6 +628,12 @@
     "cec": true
   },
   {
+    "name": "NHS Lothian CAMHS — Video Resources for Parents/Carers",
+    "desc": "Short videos from NHS Lothian CAMHS covering common mental health topics, aimed at helping parents and carers support their children.",
+    "cat": "Parents & Carers",
+    "url": "https://services.nhslothian.scot/camhs/video-resources-for-parents-carers/"
+  },
+  {
     "name": "Edinburgh Carers Council",
     "desc": "Free, confidential, independent advocacy for carers supporting someone with mental or physical health difficulties.",
     "cat": "Parents & Carers",
