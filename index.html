@@ -532,6 +532,7 @@
   .cec-badge {
     display: inline-flex;
     align-items: center;
+    gap: 0.3rem;
     background: var(--cec-badge-bg);
     color: #fff;
     font-size: 0.62rem;
@@ -542,6 +543,12 @@
     border-radius: 999px;
     white-space: nowrap;
     margin-left: auto;
+    flex-shrink: 0;
+  }
+  .cec-badge-icon {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
     flex-shrink: 0;
   }
 
@@ -840,7 +847,7 @@ function render() {
             <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${meta.icon}</svg>
           </span>
           <span class="card-cat">${r.cat}</span>
-          ${r.cec ? '<span class="cec-badge">Edinburgh</span>' : ''}
+          ${r.cec ? '<span class="cec-badge"><img class="cec-badge-icon" src="cec-favicon-32.png" alt="" width="12" height="12">Edinburgh</span>' : ''}
           ${needsGate ? '<span class="staff-badge">School network only</span>' : ''}
         </div>
         <span class="card-name">${r.name}</span>
