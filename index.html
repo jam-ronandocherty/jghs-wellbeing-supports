@@ -342,12 +342,48 @@
   }
 
   /* ── RESULTS COUNT ── */
+  .results-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
   .results-count {
     font-size: 0.85rem;
     color: var(--muted);
-    margin-bottom: 1rem;
   }
   .results-count strong { color: var(--text); }
+
+  .copy-summary-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    min-height: 36px;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1.5px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+  }
+  .copy-summary-btn:hover { border-color: var(--brand); color: var(--brand); }
+  .copy-summary-btn:focus-visible {
+    outline: 3px solid var(--brand);
+    outline-offset: 2px;
+  }
+  .copy-summary-btn.is-copied {
+    border-color: var(--brand);
+    background: var(--brand);
+    color: #fff;
+  }
+  .copy-summary-btn svg { flex-shrink: 0; }
+  .copy-summary-btn[hidden] { display: none; }
 
   /* ── CARDS ── */
   .cards {
@@ -712,7 +748,13 @@
   <p class="filters-label">Filter by topic</p>
   <div class="filters" id="filters"></div>
 
-  <p class="results-count" id="count" aria-live="polite" aria-atomic="true"></p>
+  <div class="results-bar">
+    <p class="results-count" id="count" aria-live="polite" aria-atomic="true"></p>
+    <button type="button" class="copy-summary-btn" id="copySummaryBtn" hidden title="Copy these results as a list, for pasting into an email or message">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <span id="copySummaryLabel">Copy summary</span>
+    </button>
+  </div>
   <div class="cards" id="cards"></div>
 </main>
 
@@ -833,6 +875,9 @@ function render() {
       || r.cat.toLowerCase().includes(q) || (r.tags && r.tags.some(t => t.includes(q)));
     return matchCat && matchSearch;
   });
+
+  currentFiltered = filtered;
+  copySummaryBtn.hidden = filtered.length === 0;
 
   const count = document.getElementById("count");
   count.innerHTML = `<strong>${filtered.length}</strong> support${filtered.length !== 1 ? "s" : ""} found`;
@@ -962,6 +1007,59 @@ staffGate.addEventListener("click", e => {
   if (e.target.closest("[data-staff-gate-close]")) closeStaffGate();
 });
 staffGateContinue.addEventListener("click", closeStaffGate);
+
+const copySummaryBtn = document.getElementById("copySummaryBtn");
+const copySummaryLabel = document.getElementById("copySummaryLabel");
+let currentFiltered = [];
+let copyFeedbackTimeout;
+
+function buildSummaryText(list) {
+  const parts = [];
+  if (searchQuery) parts.push(`"${searchQuery}"`);
+  if (activeCategory !== "All") parts.push(activeCategory);
+  const label = parts.length ? ` — ${parts.join(" · ")}` : "";
+  const lines = [`Wellbeing Supports${label} (${list.length} result${list.length !== 1 ? "s" : ""})`, ""];
+  list.forEach((r, i) => {
+    lines.push(`${i + 1}. ${r.name} (${r.cat})`);
+    if (r.desc) lines.push(`   ${r.desc}`);
+    lines.push(`   ${r.url}`, "");
+  });
+  lines.push("See more at https://wellbeing.jamesgillespies.co.uk");
+  return lines.join("\n");
+}
+
+async function copyTextToClipboard(text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return true;
+    } catch {
+      // fall through to legacy fallback below
+    }
+  }
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  let ok = false;
+  try { ok = document.execCommand("copy"); } catch {}
+  document.body.removeChild(ta);
+  return ok;
+}
+
+copySummaryBtn.addEventListener("click", async () => {
+  const text = buildSummaryText(currentFiltered);
+  const ok = await copyTextToClipboard(text);
+  clearTimeout(copyFeedbackTimeout);
+  copySummaryBtn.classList.toggle("is-copied", ok);
+  copySummaryLabel.textContent = ok ? "Copied!" : "Couldn't copy";
+  copyFeedbackTimeout = setTimeout(() => {
+    copySummaryBtn.classList.remove("is-copied");
+    copySummaryLabel.textContent = "Copy summary";
+  }, 2000);
+});
 
 loadResources();
 </script>
