@@ -118,10 +118,6 @@
     .card:focus-within {
       outline-color: color-mix(in srgb, var(--cat-color, var(--brand)) 65%, white);
     }
-    .card-copy {
-      background: var(--card);
-      border-color: var(--border);
-    }
   }
 
   body {
@@ -383,11 +379,6 @@
     outline: 3px solid var(--cat-color, var(--brand));
     outline-offset: 2px;
   }
-  /* .card-open is a real, fully accessible link — its ::after stretches to
-     cover the whole card so the entire card is clickable, while .card-copy
-     (a real sibling button, not nested inside the link) sits above it via
-     z-index. This avoids `display: contents`, which strips link semantics
-     from the accessibility tree in some browsers. */
   .card-open {
     position: relative;
     display: flex;
@@ -406,37 +397,6 @@
   .card-open:focus-visible {
     outline: none;
   }
-  .card-copy {
-    position: absolute;
-    z-index: 1;
-    top: 0.7rem;
-    right: 0.7rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
-    border: 1.5px solid var(--border);
-    color: var(--muted);
-    cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
-  }
-  .card-copy:hover {
-    color: var(--cat-color, var(--brand));
-    border-color: var(--cat-color, var(--brand));
-  }
-  .card-copy:focus-visible {
-    outline: 3px solid var(--cat-color, var(--brand));
-    outline-offset: 2px;
-  }
-  .card-copy.copied {
-    color: var(--brand);
-    border-color: var(--brand);
-  }
-  .card-copy .icon-check { display: none; }
-  .card-copy.copied .icon-link { display: none; }
-  .card-copy.copied .icon-check { display: inline-flex; }
   .card-header {
     display: flex;
     align-items: center;
@@ -836,32 +796,12 @@ function logMiss(q) {
   }).catch(() => {});
 }
 
-function copyResourceLink(button) {
-  const name = button.dataset.copyName;
-  const cat = button.dataset.copyCat;
-  const params = new URLSearchParams({ cat, q: name });
-  const url = `${location.origin}${location.pathname}?${params.toString()}`;
-  navigator.clipboard.writeText(url).then(() => {
-    button.classList.add("copied");
-    button.setAttribute("aria-label", "Link copied");
-    clearTimeout(button._copyResetTimer);
-    button._copyResetTimer = setTimeout(() => {
-      button.classList.remove("copied");
-      button.setAttribute("aria-label", `Copy link to ${name}`);
-    }, 1500);
-  }).catch(() => {});
-}
-
 function isOrbLink(url) {
   try {
     return new URL(url).hostname === "orb.edinburgh.gov.uk";
   } catch {
     return false;
   }
-}
-
-function escAttr(str) {
-  return String(str).replace(/"/g, "&quot;");
 }
 
 function render() {
@@ -907,10 +847,6 @@ function render() {
         ${r.desc ? `<span class="card-desc">${r.desc}</span>` : ""}
         <span class="card-link-hint">Visit website<span class="sr-only"> (opens in a new tab)</span> →</span>
       </a>
-      <button type="button" class="card-copy" data-copy-name="${escAttr(r.name)}" data-copy-cat="${escAttr(r.cat)}" aria-label="Copy link to ${escAttr(r.name)}">
-        <svg class="icon-link" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-      </button>
     </div>`;
   }).join("");
 }
@@ -961,13 +897,6 @@ document.addEventListener("keydown", e => {
 });
 
 document.getElementById("cards").addEventListener("click", e => {
-  const copyBtn = e.target.closest(".card-copy");
-  if (copyBtn) {
-    e.preventDefault();
-    copyResourceLink(copyBtn);
-    return;
-  }
-
   const clearBtn = e.target.closest("#clearSearchBtn");
   if (clearBtn) {
     searchQuery = "";
