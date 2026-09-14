@@ -562,8 +562,8 @@
   },
   {
     "name": "iThrive Edinburgh",
-    "desc": "Local mental health and wellbeing support for children, young people and families.",
-    "cat": "Parents & Carers",
+    "desc": "Brings together trusted local information, practical tools and support to help with money, food, housing and everyday essentials.",
+    "cat": "Money, Food & Housing",
     "url": "https://ithriveedinburgh.org.uk/",
     "cec": true
   },
@@ -1163,5 +1163,141 @@
     "cat": "Staff Wellbeing",
     "url": "https://ssta.org.uk/docs/stress/",
     "staff": true
+  },
+  {
+    "name": "The Advice Shop (CEC)",
+    "desc": "Edinburgh Council's confidential advice service on welfare benefits, debt management, and rent or council tax arrears. Visit 249 High St or call 0131 200 2360.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.edinburgh.gov.uk/benefits-grants/advice-shop",
+    "cec": true
+  },
+  {
+    "name": "Citizens Advice Edinburgh",
+    "desc": "Free, confidential advice on debt, housing and benefits, from bureaux and outreach points across the city.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.citizensadviceedinburgh.org.uk/"
+  },
+  {
+    "name": "CHAI (Community Help & Advice Initiative)",
+    "desc": "Free, impartial advice on money, welfare rights and housing, based in GP practices and health settings across Edinburgh. Email chai@chaiedinburgh.org.uk or call 0131 442 2100.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.chaiedinburgh.org.uk/"
+  },
+  {
+    "name": "Christians Against Poverty (CAP)",
+    "desc": "Free, in-depth debt counselling to help people find a way out of problem debt. Call 0800 328 0006.",
+    "cat": "Money, Food & Housing",
+    "url": "https://capuk.org/"
+  },
+  {
+    "name": "Cost of Living — City of Edinburgh Council",
+    "desc": "The Council's cost of living hub, with general advice on money, benefits, housing and more, all in one place.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.edinburgh.gov.uk/costofliving",
+    "cec": true
+  },
+  {
+    "name": "Scottish Government — Cost of Living Support",
+    "desc": "National cost of living support hub with information on help with money, food and fuel, all in one place.",
+    "cat": "Money, Food & Housing",
+    "url": "https://costofliving.campaign.gov.scot/"
+  },
+  {
+    "name": "Scottish Welfare Fund (CEC)",
+    "desc": "Edinburgh Council fund offering Crisis Grants for emergency expenses like food and fuel, and Community Care Grants to help people live independently. Call 0131 529 5299.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.edinburgh.gov.uk/scottishwelfarefund",
+    "cec": true
+  },
+  {
+    "name": "Turn2us Edinburgh Trust",
+    "desc": "One-off financial grants, welfare benefits checks, and signposting to other support for Edinburgh residents facing hardship from illness, job loss or other life shocks. Accessed through a partner organisation such as a school or social worker, not by direct application.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.turn2us.org.uk/get-support/apply-for-grants/turn2us-edinburgh-trust-grants"
+  },
+  {
+    "name": "Edinburgh & Lothian Trust Fund",
+    "desc": "Grants for individuals facing poverty or illness, including the Edinburgh Fire Fund for those who've lost possessions or suffered trauma in a house fire, and the Edinburgh Police Fund for Children for school jackets and shoes.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.eltf.org.uk/"
+  },
+  {
+    "name": "Tenant Hardship Fund (CEC)",
+    "desc": "Edinburgh Council support for tenants struggling to pay their rent. Speak to your housing officer, or email tenanthardshipfund@edinburgh.gov.uk.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.edinburgh.gov.uk/news/article/14051/council-extends-financial-support-for-tenants-struggling-to-pay-rent",
+    "cec": true
+  },
+  {
+    "name": "Buttle UK",
+    "desc": "Grants to cover essentials many families can't afford — from a bed or laptop to school uniform and extracurricular activities. Accessed via referral from a professional such as a school or social worker, not by direct application.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.buttleuk.org/"
+  },
+  {
+    "name": "Aberlour Urgent Assistance Fund",
+    "desc": "Cash grants for families with a child aged 21 or under (25 if care experienced) facing hardship, covering essentials like food, clothing and household items. Applications must be submitted by a professional such as a social worker or teacher.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.aberlour.org.uk/get-help/urgent-assistance-fund"
+  },
+  {
+    "name": "John Watson's Trust",
+    "desc": "Educational grants for children and young people up to 21 with a physical or learning disability, or who are socially disadvantaged — for things like school trips, equipment and bus passes.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.wssociety.co.uk/charities/jwt"
+  },
+  {
+    "name": "Edinburgh Community Food",
+    "desc": "Helps people enjoy fresh, healthy food and access an affordable, healthy diet, through a community marketplace, food boxes and partner deliveries.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.edinburghcommunityfood.org.uk/"
+  },
+  {
+    "name": "Edinburgh Food Project",
+    "desc": "Runs seven Trussell Trust foodbanks across the city, providing emergency food parcels and a Money Advice Service for people in crisis.",
+    "cat": "Money, Food & Housing",
+    "url": "https://edinburghfoodproject.org/"
+  },
+  {
+    "name": "Edinburgh City Mission — Care Van",
+    "desc": "Evening and daytime van providing hot food, drinks and advice for people who are homeless or vulnerable in Edinburgh city centre.",
+    "cat": "Money, Food & Housing",
+    "url": "https://edinburghcitymission.org.uk/ministry/care-van/"
+  },
+  {
+    "name": "Trussell Trust",
+    "desc": "Find your local foodbank and get a referral voucher for you or a family in crisis.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.trusselltrust.org/get-help/find-a-foodbank/"
+  },
+  {
+    "name": "Empty Kitchens Full Hearts",
+    "desc": "Turns surplus food into free, healthy meals for people in need across Edinburgh — lunch, dinner and snacks, 4 days a week, delivered to your home, temporary accommodation or a local community hub.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.emptykitchens.co.uk/"
+  },
+  {
+    "name": "Fuel Bank Foundation",
+    "desc": "Same-day fuel vouchers for households in crisis on a prepayment gas or electricity meter, accessed via a partner organisation such as a foodbank or advice agency.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.fuelbankfoundation.org/"
+  },
+  {
+    "name": "Home Energy Scotland",
+    "desc": "Free, impartial, Scottish Government-funded advice on saving energy, keeping warm, and grants for energy efficiency improvements.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.homeenergyscotland.org/"
+  },
+  {
+    "name": "Changeworks Advisors",
+    "desc": "Free, impartial advice on energy costs, staying warm, and reducing bills, from an Edinburgh-based energy charity.",
+    "cat": "Money, Food & Housing",
+    "url": "https://www.changeworks.org.uk/"
+  },
+  {
+    "name": "British Gas Energy Trust",
+    "desc": "Grants of up to £2,000 towards energy debt, plus free money and energy advice, for households on any energy supplier, not just British Gas.",
+    "cat": "Money, Food & Housing",
+    "url": "https://britishgasenergytrust.org.uk/"
   }
 ]
