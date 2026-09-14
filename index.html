@@ -71,6 +71,7 @@
     --cat-psychosis: #7C2D12;
     --cat-general: #78716C;
     --cat-staff: #CA8A04;
+    --cat-money: #059669;
   }
 
   @media (prefers-color-scheme: dark) {
@@ -116,10 +117,6 @@
     }
     .card:focus-within {
       outline-color: color-mix(in srgb, var(--cat-color, var(--brand)) 65%, white);
-    }
-    .card-copy {
-      background: var(--card);
-      border-color: var(--border);
     }
   }
 
@@ -382,11 +379,6 @@
     outline: 3px solid var(--cat-color, var(--brand));
     outline-offset: 2px;
   }
-  /* .card-open is a real, fully accessible link — its ::after stretches to
-     cover the whole card so the entire card is clickable, while .card-copy
-     (a real sibling button, not nested inside the link) sits above it via
-     z-index. This avoids `display: contents`, which strips link semantics
-     from the accessibility tree in some browsers. */
   .card-open {
     position: relative;
     display: flex;
@@ -405,37 +397,6 @@
   .card-open:focus-visible {
     outline: none;
   }
-  .card-copy {
-    position: absolute;
-    z-index: 1;
-    top: 0.7rem;
-    right: 0.7rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 30px;
-    height: 30px;
-    border-radius: 8px;
-    border: 1.5px solid var(--border);
-    color: var(--muted);
-    cursor: pointer;
-    transition: color 0.15s, border-color 0.15s;
-  }
-  .card-copy:hover {
-    color: var(--cat-color, var(--brand));
-    border-color: var(--cat-color, var(--brand));
-  }
-  .card-copy:focus-visible {
-    outline: 3px solid var(--cat-color, var(--brand));
-    outline-offset: 2px;
-  }
-  .card-copy.copied {
-    color: var(--brand);
-    border-color: var(--brand);
-  }
-  .card-copy .icon-check { display: none; }
-  .card-copy.copied .icon-link { display: none; }
-  .card-copy.copied .icon-check { display: inline-flex; }
   .card-header {
     display: flex;
     align-items: center;
@@ -475,10 +436,17 @@
     line-height: 1.45;
   }
   .card-link-hint {
-    margin-top: 0.25rem;
     font-size: 0.78rem;
     color: var(--brand);
     font-weight: 500;
+  }
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
   }
 
   /* ── NO RESULTS ── */
@@ -571,6 +539,7 @@
   .cec-badge {
     display: inline-flex;
     align-items: center;
+    gap: 0.3rem;
     background: var(--cec-badge-bg);
     color: #fff;
     font-size: 0.62rem;
@@ -580,7 +549,12 @@
     padding: 0.15rem 0.5rem;
     border-radius: 999px;
     white-space: nowrap;
-    margin-left: auto;
+    flex-shrink: 0;
+  }
+  .cec-badge-icon {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
     flex-shrink: 0;
   }
 
@@ -773,6 +747,7 @@ const CAT_META = {
   "Psychosis":                    { color: "var(--cat-psychosis)", icon: `<path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/>` },
   "General Mental Health":        { color: "var(--cat-general)", icon: `<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>` },
   "Staff Wellbeing":              { color: "var(--cat-staff)", icon: `<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>` },
+  "Money, Food & Housing":        { color: "var(--cat-money)", icon: `<rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/>` },
 };
 
 let RESOURCES = [];
@@ -834,32 +809,12 @@ function logMiss(q) {
   }).catch(() => {});
 }
 
-function copyResourceLink(button) {
-  const name = button.dataset.copyName;
-  const cat = button.dataset.copyCat;
-  const params = new URLSearchParams({ cat, q: name });
-  const url = `${location.origin}${location.pathname}?${params.toString()}`;
-  navigator.clipboard.writeText(url).then(() => {
-    button.classList.add("copied");
-    button.setAttribute("aria-label", "Link copied");
-    clearTimeout(button._copyResetTimer);
-    button._copyResetTimer = setTimeout(() => {
-      button.classList.remove("copied");
-      button.setAttribute("aria-label", `Copy link to ${name}`);
-    }, 1500);
-  }).catch(() => {});
-}
-
 function isOrbLink(url) {
   try {
     return new URL(url).hostname === "orb.edinburgh.gov.uk";
   } catch {
     return false;
   }
-}
-
-function escAttr(str) {
-  return String(str).replace(/"/g, "&quot;");
 }
 
 function render() {
@@ -898,17 +853,15 @@ function render() {
             <svg class="card-icon" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${meta.icon}</svg>
           </span>
           <span class="card-cat">${r.cat}</span>
-          ${r.cec ? '<span class="cec-badge">Edinburgh</span>' : ''}
           ${needsGate ? '<span class="staff-badge">School network only</span>' : ''}
         </div>
         <span class="card-name">${r.name}</span>
         ${r.desc ? `<span class="card-desc">${r.desc}</span>` : ""}
-        <span class="card-link-hint">Visit website<span class="sr-only"> (opens in a new tab)</span> →</span>
+        <div class="card-footer">
+          <span class="card-link-hint">Visit website<span class="sr-only"> (opens in a new tab)</span> →</span>
+          ${r.cec ? '<span class="cec-badge"><img class="cec-badge-icon" src="cec-favicon-32.png" alt="" width="12" height="12">Edinburgh</span>' : ''}
+        </div>
       </a>
-      <button type="button" class="card-copy" data-copy-name="${escAttr(r.name)}" data-copy-cat="${escAttr(r.cat)}" aria-label="Copy link to ${escAttr(r.name)}">
-        <svg class="icon-link" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        <svg class="icon-check" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-      </button>
     </div>`;
   }).join("");
 }
@@ -959,13 +912,6 @@ document.addEventListener("keydown", e => {
 });
 
 document.getElementById("cards").addEventListener("click", e => {
-  const copyBtn = e.target.closest(".card-copy");
-  if (copyBtn) {
-    e.preventDefault();
-    copyResourceLink(copyBtn);
-    return;
-  }
-
   const clearBtn = e.target.closest("#clearSearchBtn");
   if (clearBtn) {
     searchQuery = "";
