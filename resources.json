@@ -118,35 +118,35 @@
     "desc": "Counselling and psychotherapy charity based in Edinburgh.",
     "cat": "Anxiety & Sleep",
     "url": "https://www.wellspring-scotland.co.uk/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Talktime Scotland",
     "desc": "Free counselling and emotional support for young people aged 12–25 with a physical disability.",
     "cat": "Anxiety & Sleep",
     "url": "https://www.talktimescotland.co.uk/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Centre for Psychological Therapies",
     "desc": "Evidence-based psychological therapies for up to age 26 for low mood, anxiety, and trauma. Based at University of Edinburgh; donations welcomed.",
     "cat": "Anxiety & Sleep",
     "url": "https://www.health.ed.ac.uk/centre-for-psychological-therapies",
-    "cec": true
+    "local": true
   },
   {
     "name": "First Psychology Community Clinic",
     "desc": "Low-cost counselling sessions (£5–£25) for adults 16+ with mild to moderate mental health difficulties.",
     "cat": "Anxiety & Sleep",
     "url": "https://www.firstpsychologytraining.co.uk/clinic",
-    "cec": true
+    "local": true
   },
   {
     "name": "NHS Lothian CAMHS — Computerised CBT",
     "desc": "Free online CBT modules for children, teens and parents dealing with anxiety, worked through at your own pace. Access code: Lothian.",
     "cat": "Anxiety & Sleep",
     "url": "https://cyplothian.silvercloudhealth.com/signup/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Things to try",
@@ -193,7 +193,7 @@
     "desc": "Edinburgh self-harm service — support for 16+ and families.",
     "cat": "Self-Harm & Suicidal Ideation",
     "url": "https://www.penumbra.org.uk/",
-    "cec": true,
+    "local": true,
     "tags": ["self harm", "cutting", "suicide", "suicidal"]
   },
   {
@@ -208,7 +208,7 @@
     "desc": "Support for young people in Edinburgh aged 12–21.",
     "cat": "Self-Harm & Suicidal Ideation",
     "url": "https://the-junction.org/",
-    "cec": true,
+    "local": true,
     "tags": ["self harm", "suicide", "suicidal"]
   },
   {
@@ -251,7 +251,7 @@
     "desc": "Self-help guides and resources for OCD.",
     "cat": "Eating Disorders & OCD",
     "url": "https://ithriveedinburgh.org.uk/self-help/self-help-guides-resources/obsessive-compulsions/",
-    "cec": true,
+    "local": true,
     "tags": ["obsessive compulsive", "intrusive thoughts", "compulsions"]
   },
   {
@@ -294,7 +294,7 @@
     "desc": "Support for women and children experiencing domestic abuse.",
     "cat": "Abuse",
     "url": "https://edinwomensaid.co.uk/",
-    "cec": true,
+    "local": true,
     "tags": ["domestic violence", "domestic abuse"]
   },
   {
@@ -302,7 +302,7 @@
     "desc": "Confidential support for young people aged 12–18 in Edinburgh experiencing sexual harm, plus support for their families.",
     "cat": "Abuse",
     "url": "https://www.ercc.scot/services/star-project/",
-    "cec": true,
+    "local": true,
     "tags": ["sexual abuse", "sexual assault", "rape"]
   },
   {
@@ -310,7 +310,7 @@
     "desc": "NHS service providing healthcare and support in the days after rape or sexual assault. No obligation to report to police.",
     "cat": "Abuse",
     "url": "https://www.nhsinform.scot/turn-to-sarcs/",
-    "cec": true,
+    "local": true,
     "tags": ["rape", "sexual assault"]
   },
   {
@@ -353,7 +353,7 @@
     "desc": "Self-help guides for coping with bereavement and grief.",
     "cat": "Bereavement",
     "url": "https://ithriveedinburgh.org.uk/self-help/self-help-guides-resources/bereavement-and-grief/",
-    "cec": true,
+    "local": true,
     "tags": ["death", "grief", "loss", "dying"]
   },
   {
@@ -382,7 +382,7 @@
     "desc": "Support for children and young people aged 4–18 in Edinburgh and Midlothian who have been bereaved.",
     "cat": "Bereavement",
     "url": "https://www.richmondshope.org.uk/",
-    "cec": true,
+    "local": true,
     "tags": ["death", "grief", "loss", "dying"]
   },
   {
@@ -432,14 +432,14 @@
     "desc": "Support for young people aged 5–25 who care for someone at home.",
     "cat": "Young Carers",
     "url": "https://www.youngcarers.org.uk/",
-    "cec": true
+    "local": true
   },
   {
     "name": "NHS Lothian — Young Carers",
     "desc": "Information and support for young carers from NHS Lothian.",
     "cat": "Young Carers",
     "url": "https://services.nhslothian.scot/supportingcarers/young-carers/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Black Minds Matter UK",
@@ -458,35 +458,35 @@
     "desc": "Support for East and Southeast Asian people in Scotland.",
     "cat": "Cultural Support",
     "url": "https://www.esascotland.org/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Feniks",
     "desc": "Supporting the Central Eastern European community in Edinburgh.",
     "cat": "Cultural Support",
     "url": "https://feniks.org.uk/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Shakti Edinburgh",
     "desc": "Support for minority ethnic women experiencing domestic abuse.",
     "cat": "Cultural Support",
     "url": "https://shaktiedinburgh.co.uk/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Roshni",
     "desc": "Health, safety and wellbeing of minority ethnic children and families.",
     "cat": "Cultural Support",
     "url": "https://www.roshni.org.uk/",
-    "cec": true
+    "local": true
   },
   {
     "name": "SHE Scotland",
     "desc": "Supporting young women and girls.",
     "cat": "Cultural Support",
     "url": "https://www.shescotland.org.uk/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Crew Scotland",
@@ -507,7 +507,7 @@
     "desc": "Community alcohol awareness service, supported accommodation and one-to-one support in Edinburgh.",
     "cat": "Substance Misuse",
     "url": "https://www.rowanalba.org/",
-    "cec": true,
+    "local": true,
     "tags": ["alcohol", "drinking"]
   },
   {
@@ -515,7 +515,7 @@
     "desc": "Advice, information and one-to-one support for young people up to 21 who use drugs or alcohol in Edinburgh.",
     "cat": "Substance Misuse",
     "url": "https://www.edinburghadp.co.uk/information-advice-support/help-and-support-for-young-people",
-    "cec": true,
+    "local": true,
     "tags": ["drugs", "alcohol", "drinking", "vaping", "smoking"]
   },
   {
@@ -565,21 +565,21 @@
     "desc": "Brings together trusted local information, practical tools and support to help with money, food, housing and everyday essentials.",
     "cat": "Money, Food & Housing",
     "url": "https://ithriveedinburgh.org.uk/",
-    "cec": true
+    "local": true
   },
   {
     "name": "One Parent Families Scotland",
     "desc": "Free 1:1 counselling for single parents, available face-to-face or by video.",
     "cat": "Parents & Carers",
     "url": "https://opfs.org.uk/",
-    "cec": true
+    "local": true
   },
   {
     "name": "North East Systemic Service (NEST)",
     "desc": "Systemic family counselling in North East Edinburgh, supporting communication and relationships for families with children aged 5–12.",
     "cat": "Parents & Carers",
     "url": "https://www.homelinkfamilysupport.org/services/therapeutic-support/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Edinburgh City Council — Mental Health & Wellbeing",
@@ -617,15 +617,14 @@
     "name": "CrossReach",
     "desc": "Support for families, parents, children and young people at different stages of life, across Scotland.",
     "cat": "Parents & Carers",
-    "url": "https://crossreach.org.uk/",
-    "cec": true
+    "url": "https://crossreach.org.uk/"
   },
   {
     "name": "Citadel Youth Centre",
     "desc": "Open access youth clubs, projects and individual support for young people in Leith, Edinburgh.",
     "cat": "Parents & Carers",
     "url": "https://citadelyouthcentre.org.uk/",
-    "cec": true
+    "local": true
   },
   {
     "name": "NHS Lothian CAMHS — Video Resources for Parents/Carers",
@@ -638,14 +637,14 @@
     "desc": "Free, confidential, independent advocacy for carers supporting someone with mental or physical health difficulties.",
     "cat": "Parents & Carers",
     "url": "https://www.edinburghcarerscouncil.co.uk/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Edinburgh City Youth Cafe (6VT)",
     "desc": "Drop-in social, educational and personal development activities for young people aged 13–21 in Edinburgh.",
     "cat": "Parents & Carers",
     "url": "https://www.6vt.info/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Edinburgh Carer Support Team",
@@ -659,14 +658,14 @@
     "desc": "Youth befriending, young carers services and counselling for children, young people and families in South West Edinburgh.",
     "cat": "Parents & Carers",
     "url": "https://spacescot.org/",
-    "cec": true
+    "local": true
   },
   {
     "name": "VOCAL — Parent Carer Support",
     "desc": "Edinburgh support for parents and carers of disabled or neurodivergent children and young people, including one-to-one help, peer groups, training and transition guidance.",
     "cat": "Parents & Carers",
     "url": "https://www.vocal.org.uk/our-services/specialist-support/parent-carer-support/",
-    "cec": true
+    "local": true
   },
   {
     "name": "National Autistic Society",
@@ -693,14 +692,14 @@
     "desc": "Services tailored to people with autism, their families and carers in Edinburgh.",
     "cat": "ADHD & Autism",
     "url": "https://www.autisminitiatives.org/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Branch Out Together",
     "desc": "Support, information and social activities for individuals, families and carers affected by autism in the Lothians (formerly Lothian Autistic Society).",
     "cat": "ADHD & Autism",
     "url": "https://www.lothianautistic.org/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Amazing Things Happen",
@@ -713,21 +712,20 @@
     "desc": "Support for the mental health and wellbeing of 5–24 year olds in Edinburgh with a neurodevelopmental condition such as autism, ADHD or intellectual disability.",
     "cat": "ADHD & Autism",
     "url": "https://tailoredfoundation.co.uk/ndwell-group-service/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Tailor Ed Foundation",
     "desc": "Early Years and Target Specific services plus social supports for the autism community in Edinburgh.",
     "cat": "ADHD & Autism",
     "url": "https://tailoredfoundation.co.uk/",
-    "cec": true
+    "local": true
   },
   {
     "name": "The Yard",
     "desc": "Adventure play services for disabled children, young people and their families in the east of Scotland.",
     "cat": "ADHD & Autism",
-    "url": "https://theyardscotland.org.uk/",
-    "cec": true
+    "url": "https://theyardscotland.org.uk/"
   },
   {
     "name": "Scottish ADHD Coalition",
@@ -741,21 +739,21 @@
     "desc": "Resources and guides on understanding the strengths and difficulties of neurodivergent children, developed by the University of Edinburgh.",
     "cat": "ADHD & Autism",
     "url": "https://clinical-brain-sciences.ed.ac.uk/research/epic-edinburgh-psychoeducation-intervention",
-    "cec": true
+    "local": true
   },
   {
     "name": "Number 6",
     "desc": "Free, autism-specific Edinburgh social groups and short-term one-to-one advice for people aged 16+ with a formal diagnosis and no learning disability. Self- and third-party referrals accepted.",
     "cat": "ADHD & Autism",
     "url": "https://autisminitiatives.org/number-6/",
-    "cec": true
+    "local": true
   },
   {
     "name": "Salvesen Mindroom Centre — Young People",
     "desc": "Advice, advocacy and transition support for neurodivergent young people under 25, including those with autism. Helps young people voice their needs and plan for life after school; no diagnosis is required.",
     "cat": "ADHD & Autism",
     "url": "https://www.mindroom.org/help-and-support/children-and-young-people/",
-    "cec": true
+    "local": true
   },
   {
     "name": "National Autistic Society — Empower Up",
