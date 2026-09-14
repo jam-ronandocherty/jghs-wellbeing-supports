@@ -668,6 +668,12 @@
     "local": true
   },
   {
+    "name": "Scottish Centre for Conflict Resolution",
+    "desc": "Many parents and carers face the same challenges around money, respect, independence, and other issues. Get support to reduce conflict and increase connection.",
+    "cat": "Parents & Carers",
+    "url": "https://www.scottishconflictresolution.org.uk/parents-and-carers",
+  },
+  {
     "name": "National Autistic Society",
     "desc": "UK's leading charity for autistic people and their families.",
     "cat": "ADHD & Autism",
@@ -881,6 +887,12 @@
     "desc": "Mental health information for parents and young people from the Royal College of Psychiatrists.",
     "cat": "General Mental Health",
     "url": "https://www.rcpsych.ac.uk/mental-health/parents-and-young-people"
+  },
+  {
+    "name": "Scottish Centre for Conflict Resolution",
+    "desc": "Information for young people and families on resolving conflict.",
+    "cat": "General Mental Health",
+    "url": "https://www.scottishconflictresolution.org.uk/young-people"
   },
   {
     "name": "Mental Health Foundation",
