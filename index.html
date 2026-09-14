@@ -48,7 +48,7 @@
     --shadow: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
     --shadow-hover: 0 4px 12px rgba(0,0,0,0.12);
 
-    --cec-badge-bg: #003865;
+    --edinburgh-badge-bg: #003865;
     --crisis-border: #F5C6C2;
 
     --cat-crisis: #DC2626;
@@ -364,6 +364,8 @@
 
   .card {
     position: relative;
+    display: flex;
+    flex-direction: column;
     background: var(--card);
     border-radius: var(--radius);
     border: 1.5px solid var(--border);
@@ -383,6 +385,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    flex: 1;
     gap: 0.4rem;
     padding: 1.1rem 1.25rem;
     text-decoration: none;
@@ -446,7 +449,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: 0.25rem;
+    margin-top: auto;
+    padding-top: 0.25rem;
   }
 
   /* ── NO RESULTS ── */
@@ -535,12 +539,15 @@
     .card[data-rainbow] .card-icon-chip { color: hsl(320, 80%, 45%); }
   }
 
-  /* ── CEC BADGE ── */
-  .cec-badge {
+  /* ── EDINBURGH BADGE ── */
+  /* Shown on every Edinburgh-related card. .cec-badge-icon (the Council
+     logo) only appears on cards actually run by the City of Edinburgh
+     Council — everything else local to Edinburgh gets the plain pill. */
+  .edinburgh-badge {
     display: inline-flex;
     align-items: center;
     gap: 0.3rem;
-    background: var(--cec-badge-bg);
+    background: var(--edinburgh-badge-bg);
     color: #fff;
     font-size: 0.62rem;
     font-weight: 700;
@@ -859,7 +866,7 @@ function render() {
         ${r.desc ? `<span class="card-desc">${r.desc}</span>` : ""}
         <div class="card-footer">
           <span class="card-link-hint">Visit website<span class="sr-only"> (opens in a new tab)</span> →</span>
-          ${r.cec ? '<span class="cec-badge"><img class="cec-badge-icon" src="cec-favicon-32.png" alt="" width="12" height="12">Edinburgh</span>' : ''}
+          ${r.cec ? '<span class="edinburgh-badge"><img class="cec-badge-icon" src="cec-favicon-32.png" alt="" width="12" height="12">Edinburgh</span>' : r.local ? '<span class="edinburgh-badge">Edinburgh</span>' : ''}
         </div>
       </a>
     </div>`;
